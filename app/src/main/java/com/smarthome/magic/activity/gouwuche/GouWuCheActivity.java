@@ -31,11 +31,13 @@ import com.smarthome.magic.adapter.GouWuCheAdapter;
 import com.smarthome.magic.app.BaseActivity;
 import com.smarthome.magic.app.UIHelper;
 import com.smarthome.magic.callback.JsonCallback;
+import com.smarthome.magic.common.StringUtils;
 import com.smarthome.magic.config.AppResponse;
 import com.smarthome.magic.config.UserManager;
 import com.smarthome.magic.get_net.Urls;
 import com.smarthome.magic.model.GouWuCheDataModel;
 import com.smarthome.magic.model.GouWuCheZhengHeModel;
+import com.tuya.android.mist.core.html.SpanMark;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -410,10 +412,16 @@ public class GouWuCheActivity extends BaseActivity {
                         break;
 
                     case R.id.tv_jianhao:
-                        if (mDatas.get(position).getPay_count().equals("1")) {
+                        if (StringUtils.isEmpty(mDatas.get(position).getPay_count())) {
+                            mDatas.get(position).setPay_count("0");
+                        }
+                        BigDecimal bigDecimal_num = new BigDecimal(mDatas.get(position).getPay_count());
+                        BigDecimal bigDecimal_num_1 = new BigDecimal("1");
+                        if (bigDecimal_num.compareTo(bigDecimal_num_1) == 0) {
                             UIHelper.ToastMessage(GouWuCheActivity.this, "您购买的数量不能小于1");
                             return;
                         }
+
 
                         int payCountJian = Integer.parseInt(mDatas.get(position).getPay_count()) - 1;
                         mDatas.get(position).setPay_count(payCountJian + "");
@@ -678,7 +686,7 @@ public class GouWuCheActivity extends BaseActivity {
             }
         }
 
-        if (strFlag.equals("0")){
+        if (strFlag.equals("0")) {
             mDatas.get(dianpuSelectPosition).setIsSelect("0");
         }
 

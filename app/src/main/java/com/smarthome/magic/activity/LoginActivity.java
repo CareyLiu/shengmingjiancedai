@@ -75,7 +75,7 @@ import rx.functions.Action1;
 import static com.smarthome.magic.get_net.Urls.SERVER_URL;
 
 
-public class LoginActivity extends BaseActivity implements EasyPermissions.PermissionCallbacks{
+public class LoginActivity extends BaseActivity implements EasyPermissions.PermissionCallbacks {
     @BindView(R.id.iv_icon)
     ImageView ivIcon;
     @BindView(R.id.tv_title)
@@ -592,6 +592,7 @@ public class LoginActivity extends BaseActivity implements EasyPermissions.Permi
                     }
                 });
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -608,8 +609,8 @@ public class LoginActivity extends BaseActivity implements EasyPermissions.Permi
 
     @Override
     public void onPermissionsDenied(int requestCode, List<String> perms) {
-        UIHelper.ToastMessage(mContext, "拒绝了");
+        //UIHelper.ToastMessage(mContext, "拒绝了");
         Log.i("LoginActivity_xx", "拒绝了......");
-        fuWuDialog.show();
+
     }
 }
