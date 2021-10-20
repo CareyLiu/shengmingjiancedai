@@ -12,9 +12,14 @@
         android:scaleType="fitXY"
         android:src="@mipmap/shengxian_wait" />
 
-    <View
+    <Button
         android:id="@+id/view"
-        android:layout_width="match_parent"
+        android:layout_width="300pt"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="350pt"
         android:layout_height="88pt"
-        android:layout_gravity="bottom" />
+        android:gravity="center"
+        android:textSize="35pt"
+        android:text="开门购物"
+        android:background="@drawable/bg_white_radius_15" />
 </FrameLayout>

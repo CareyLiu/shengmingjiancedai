@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_app"
     android:orientation="vertical">
 
-    <com.youth.banner.Banner
-        android:id="@+id/banner"
-        android:layout_width="618pt"
-        android:layout_height="610pt"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="32pt"
-        android:layout_marginBottom="24pt" />
-
     <LinearLayout
-        android:id="@+id/ll_main"
-        android:layout_width="634pt"
-        android:layout_height="346pt"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/bg_white_radius_15"
-        android:gravity="center">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="538pt"
-            android:layout_height="199pt"
-            android:src="@mipmap/shengxian_main_img" />
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            android:layout_width="618pt"
+            android:layout_height="610pt"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32pt"
+            android:layout_marginBottom="24pt" />
+
+        <LinearLayout
+            android:id="@+id/ll_main"
+            android:layout_width="634pt"
+            android:layout_height="346pt"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_white_radius_15"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="538pt"
+                android:layout_height="199pt"
+                android:src="@mipmap/shengxian_main_img" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="88pt"
+        android:layout_gravity="bottom" />
+</FrameLayout>

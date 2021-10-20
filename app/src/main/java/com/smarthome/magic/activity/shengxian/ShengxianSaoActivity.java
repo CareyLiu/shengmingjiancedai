@@ -106,8 +106,8 @@ public class ShengxianSaoActivity extends BaseActivity implements QRCodeView.Del
         saoma(result);
     }
 
-    private void showTishi(String msg) {
-        TishiDialog dialog = new TishiDialog(mContext, TishiDialog.TYPE_XIAOXI, new TishiDialog.TishiDialogListener() {
+    public void saoma(String device_ccid) {
+        TishiDialog dialog = new TishiDialog(mContext, TishiDialog.TYPE_SUCESS, new TishiDialog.TishiDialogListener() {
             @Override
             public void onClickCancel(View v, TishiDialog dialog) {
 
@@ -120,60 +120,14 @@ public class ShengxianSaoActivity extends BaseActivity implements QRCodeView.Del
 
             @Override
             public void onDismiss(TishiDialog dialog) {
-                mQRCodeView.startSpot();
-                mQRCodeView.setDelegate(ShengxianSaoActivity.this);
+                ShengxianWaitActivity.actionStart(mContext,device_ccid);
+                finish();
             }
         });
         dialog.setTextConfirm("确定");
         dialog.setTextCancel("");
-        dialog.setTextContent(msg);
+        dialog.setTextContent("扫码成功");
         dialog.show();
-    }
-
-    public void saoma(String device_ccid) {
-        Map<String, String> map = new HashMap<>();
-        map.put("code", "110001");
-        map.put("key", Urls.key);
-//        map.put("token", UserManager.getManager(mContext).getAppToken());
-        map.put("wx_token", "1628560a06563500g000q000O000t0");
-        map.put("device_ccid", device_ccid);
-
-        Gson gson = new Gson();
-        OkGo.<AppResponse<CarBrand.DataBean>>post(Urls.SERVER_URL + "lc/app/user")
-                .tag(this)//
-                .upJson(gson.toJson(map))
-                .execute(new JsonCallback<AppResponse<CarBrand.DataBean>>() {
-                    @Override
-                    public void onSuccess(final Response<AppResponse<CarBrand.DataBean>> response) {
-                        TishiDialog dialog = new TishiDialog(mContext, TishiDialog.TYPE_SUCESS, new TishiDialog.TishiDialogListener() {
-                            @Override
-                            public void onClickCancel(View v, TishiDialog dialog) {
-
-                            }
-
-                            @Override
-                            public void onClickConfirm(View v, TishiDialog dialog) {
-
-                            }
-
-                            @Override
-                            public void onDismiss(TishiDialog dialog) {
-                                ShengxianWaitActivity.actionStart(mContext);
-                                finish();
-                            }
-                        });
-                        dialog.setTextConfirm("确定");
-                        dialog.setTextCancel("");
-                        dialog.setTextContent("扫码成功");
-                        dialog.show();
-                    }
-
-                    @Override
-                    public void onError(Response<AppResponse<CarBrand.DataBean>> response) {
-                        String msg = response.getException().getMessage();
-                        showTishi(msg);
-                    }
-                });
     }
 
 

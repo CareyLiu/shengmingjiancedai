@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import androidx.annotation.Nullable;
-
 import com.smarthome.magic.R;
 import com.smarthome.magic.activity.GouMaiXiangQingActivity;
 import com.smarthome.magic.app.BaseActivity;
@@ -18,7 +16,9 @@ import com.youth.banner.Banner;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.Nullable;
 import butterknife.BindView;
+import butterknife.OnClick;
 import pub.devrel.easypermissions.EasyPermissions;
 
 public class ShengxianMainActivity extends BaseActivity {
@@ -28,6 +28,8 @@ public class ShengxianMainActivity extends BaseActivity {
     Banner banner;
     @BindView(R.id.ll_main)
     LinearLayout llMain;
+    @BindView(R.id.view)
+    View view;
 
     @Override
     public int getContentViewResId() {
@@ -58,7 +60,6 @@ public class ShengxianMainActivity extends BaseActivity {
         iv_rightTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                GouMaiXiangQingActivity.actionStart(mContext);
                 saoyisao();
             }
         });
@@ -95,5 +96,10 @@ public class ShengxianMainActivity extends BaseActivity {
         banner.setImages(items);
         //banner设置方法全部调用完毕时最后调用
         banner.start();
+    }
+
+    @OnClick(R.id.view)
+    public void onViewClicked() {
+        GouMaiXiangQingActivity.actionStart(mContext);
     }
 }
