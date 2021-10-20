@@ -60,6 +60,7 @@ import com.rairmmd.andmqtt.MqttUnSubscribe;
 import com.smarthome.magic.R;
 import com.smarthome.magic.aakefudan.chat.MyMessage;
 import com.smarthome.magic.aakefudan.chat.MyMessageItemProvider;
+import com.smarthome.magic.activity.GouMaiXiangQingActivity;
 import com.smarthome.magic.activity.LoginActivity;
 import com.smarthome.magic.activity.WelcomeActivity;
 import com.smarthome.magic.activity.shuinuan.Y;
@@ -681,7 +682,9 @@ public class MyApplication extends MultiDexApplication {
                             return;
                         }
                         System.out.println("Rair 订阅的主题：" + topic + "  收到的数据信息：  " + message.toString());
-                        if (message.toString().contains("{")) {
+                        if (message.toString().contains("CLOSE.")) {
+                            GouMaiXiangQingActivity.actionStart(getApplicationContext());
+                        } else if (message.toString().contains("{")) {
                             //解析对象 code
                             Gson gson = new Gson();
                             CodeClass codeClass = gson.fromJson(message.toString(), CodeClass.class);
@@ -954,16 +957,16 @@ public class MyApplication extends MultiDexApplication {
                 new Rect(leftMargin, -topMargin, leftMargin, -topMargin);
     }
 
-    private  String appUserAgent;
+    private String appUserAgent;
 
-    public  String getAppUserAgent() {
+    public String getAppUserAgent() {
         if (appUserAgent == null || appUserAgent == "") {
             appUserAgent = getUserAgent();
         }
         return appUserAgent;
     }
 
-    private  String getUserAgent() {
+    private String getUserAgent() {
         TelephonyManager mTelephonyMgr = (TelephonyManager) application.getSystemService(Context.TELEPHONY_SERVICE);
         @SuppressLint("MissingPermission") String imsi = mTelephonyMgr.getSubscriberId();
         @SuppressLint("MissingPermission") String imei = mTelephonyMgr.getDeviceId();
@@ -1005,7 +1008,7 @@ public class MyApplication extends MultiDexApplication {
                 .setCacheMode(CacheMode.NO_CACHE)               //全局统一缓存模式，默认不使用缓存，可以不传
                 .setCacheTime(CacheEntity.CACHE_NEVER_EXPIRE)   //全局统一缓存时间，默认永不过期，可以不传
                 .setRetryCount(3);
-              //  .addCommonHeaders(httpParams);
+        //  .addCommonHeaders(httpParams);
         ;                         //全局统一超时重连次数，默认为三次，那么最差的情况会请求4次(一次原始请求，三次重连请求)，不需要可以设置为0
 
 
