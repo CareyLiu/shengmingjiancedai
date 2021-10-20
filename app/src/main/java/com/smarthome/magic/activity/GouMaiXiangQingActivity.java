@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.smarthome.magic.R;
 import com.smarthome.magic.adapter.GouMaiXiangQingItemAdapter;
 import com.smarthome.magic.app.BaseActivity;
+import com.smarthome.magic.app.UIHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +28,7 @@ public class GouMaiXiangQingActivity extends BaseActivity {
     List<String> mDatas = new ArrayList<>();
     @BindView(R.id.iv_left_line)
     ImageView ivLeftLine;
-    @BindView(R.id.rlv_list)
-    RecyclerView rlvList;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,6 +43,23 @@ public class GouMaiXiangQingActivity extends BaseActivity {
 //        rlvList.setLayoutManager(linearLayoutManager);
 //        gouMaiXiangQingItemAdapter.setNewData(mDatas);
 
+        showProgressDialog("正在结算，请稍后......");
+
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                try {
+                    Thread.sleep(3000);
+dismissProgressDialog();
+                    UIHelper.ToastMessage(mContext, "扣款成功", Toast.LENGTH_LONG);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }).start();
 
     }
 
