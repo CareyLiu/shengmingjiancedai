@@ -80,6 +80,12 @@ public class MessagerFragment extends BaseFragment implements Observer {
         tagList.add("未处理");
     }
 
+    @Override
+    public void onSupportVisible() {
+        super.onSupportVisible();
+
+
+    }
 
     @Override
     protected void initLogic() {

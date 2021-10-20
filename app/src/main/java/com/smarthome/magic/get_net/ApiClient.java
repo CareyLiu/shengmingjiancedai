@@ -38,13 +38,13 @@ public class ApiClient {
         @SuppressLint("MissingPermission") String imsi = mTelephonyMgr.getSubscriberId();
         @SuppressLint("MissingPermission") String imei = mTelephonyMgr.getDeviceId();
         if (appUserAgent == null || appUserAgent == "") {
-            StringBuilder ua = new StringBuilder("MFang.Consumer");
+            StringBuilder ua = new StringBuilder("SHENGDENGKEJI");
             ua.append(',' + android.os.Build.MODEL); //手机型号
             ua.append(',' + "1");//手机系统平台
             ua.append(',' + String.valueOf(appContext.getPackageInfo().versionName));//App版本
             ua.append(',' + String.valueOf(appContext.getPackageInfo().versionCode));
             ua.append(',' + String.valueOf(imei));
-            ua.append(',' + String.valueOf(imsi));
+            ua.append(',' + String.valueOf(imsi));//SIM卡唯一标识
             ua.append(',' + App.DeviceId);//客户端唯一标识
             appUserAgent = ua.toString();
         }

@@ -23,8 +23,11 @@ public class ZhiKongListAdapter extends BaseQuickAdapter<Home.DataBean.Intellect
 
     @Override
     protected void convert(BaseViewHolder helper, Home.DataBean.IntellectListBean item) {
-        helper.setText(R.id.tv_text, item.getName());
-        Glide.with(mContext).load(item.getImg_url()).into((ImageView) helper.getView(R.id.iv_image));
+        if (!item.getId().equals("5")){
+            helper.setText(R.id.tv_text, item.getName());
+            Glide.with(mContext).load(item.getImg_url()).into((ImageView) helper.getView(R.id.iv_image));
+
+        }
 
 //        if (helper.getAdapterPosition() == 0) {
 //            setMargins(helper.getView(R.id.constrain), DensityUtil.dp2px(13), DensityUtil.dp2px(10), 0, 0);

@@ -10,6 +10,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -27,6 +29,7 @@ import androidx.lifecycle.Observer;
 import androidx.multidex.MultiDexApplication;
 
 import android.os.Handler;
+import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -46,6 +49,7 @@ import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpHeaders;
+import com.lzy.okgo.model.HttpParams;
 import com.lzy.okgo.model.Response;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
@@ -118,6 +122,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -949,7 +954,38 @@ public class MyApplication extends MultiDexApplication {
                 new Rect(leftMargin, -topMargin, leftMargin, -topMargin);
     }
 
+    private  String appUserAgent;
+
+    public  String getAppUserAgent() {
+        if (appUserAgent == null || appUserAgent == "") {
+            appUserAgent = getUserAgent();
+        }
+        return appUserAgent;
+    }
+
+    private  String getUserAgent() {
+        TelephonyManager mTelephonyMgr = (TelephonyManager) application.getSystemService(Context.TELEPHONY_SERVICE);
+        @SuppressLint("MissingPermission") String imsi = mTelephonyMgr.getSubscriberId();
+        @SuppressLint("MissingPermission") String imei = mTelephonyMgr.getDeviceId();
+        if (appUserAgent == null || appUserAgent == "") {
+            StringBuilder ua = new StringBuilder("SHENGDENGKEJI");
+            ua.append(',' + android.os.Build.MODEL); //手机型号
+            ua.append(',' + "1");//手机系统平台
+            ua.append(',' + String.valueOf(application.getPackageInfo().versionName));//App版本
+            ua.append(',' + String.valueOf(application.getPackageInfo().versionCode));
+            ua.append(',' + String.valueOf(imei));
+            ua.append(',' + String.valueOf(imsi));//SIM卡唯一标识
+            ua.append(',' + App.DeviceId);//客户端唯一标识
+            appUserAgent = ua.toString();
+        }
+        return appUserAgent;
+    }
+
+    HttpHeaders httpParams;
+
     private void initOkgo() {
+//        httpParams = new HttpHeaders();
+//        httpParams.put("header", getAppUserAgent());
 
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("OkGo");
@@ -968,9 +1004,9 @@ public class MyApplication extends MultiDexApplication {
                 .setOkHttpClient(builder.build())               //建议设置OkHttpClient，不设置将使用默认的
                 .setCacheMode(CacheMode.NO_CACHE)               //全局统一缓存模式，默认不使用缓存，可以不传
                 .setCacheTime(CacheEntity.CACHE_NEVER_EXPIRE)   //全局统一缓存时间，默认永不过期，可以不传
-                .setRetryCount(3);                         //全局统一超时重连次数，默认为三次，那么最差的情况会请求4次(一次原始请求，三次重连请求)，不需要可以设置为0
-//				.addCommonParams(params);                       //全局公共参数
-
+                .setRetryCount(3);
+              //  .addCommonHeaders(httpParams);
+        ;                         //全局统一超时重连次数，默认为三次，那么最差的情况会请求4次(一次原始请求，三次重连请求)，不需要可以设置为0
 
 
     }
@@ -1118,6 +1154,36 @@ public class MyApplication extends MultiDexApplication {
         RxBus.getDefault().sendRx(n);
     }
 
+
+    /**
+     * 获取App安装包信息
+     *
+     * @return
+     */
+    public PackageInfo getPackageInfo() {
+        PackageInfo info = null;
+        try {
+            info = getPackageManager().getPackageInfo(getPackageName(), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace(System.err);
+        }
+        if (info == null) info = new PackageInfo();
+        return info;
+    }
+
+    /**
+     * 获取App唯一标识
+     *
+     * @return
+     */
+    public String getAppId() {
+        String uniqueID = getProperty(AppConfig.CONF_APP_UNIQUEID);
+        if (StringUtils.isEmpty(uniqueID)) {
+            uniqueID = UUID.randomUUID().toString();
+            setProperty(AppConfig.CONF_APP_UNIQUEID, uniqueID);
+        }
+        return uniqueID;
+    }
 
 }
 

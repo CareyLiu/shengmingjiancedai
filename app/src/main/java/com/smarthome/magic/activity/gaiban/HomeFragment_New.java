@@ -48,6 +48,7 @@ import com.smarthome.magic.activity.gouwuche.GouWuCheActivity;
 import com.smarthome.magic.activity.homepage.DaLiBaoActivity;
 import com.smarthome.magic.activity.jd_taobao_pinduoduo.TaoBao_Jd_PinDuoDuoActivity;
 import com.smarthome.magic.activity.saoma.ScanActivity;
+import com.smarthome.magic.activity.shengxian.ShengxianMainActivity;
 import com.smarthome.magic.activity.tongcheng58.GongJiangLieBiaoNewActivity;
 import com.smarthome.magic.activity.tongcheng58.TongChengMainActivity;
 import com.smarthome.magic.activity.tuangou.TuanGouShangJiaListActivity;
@@ -550,7 +551,7 @@ public class HomeFragment_New extends BaseFragment implements ObservableScrollVi
                         } else if (intellectListBean.getId().equals("4")) {//空调
                             SheBeiLieBiaoActivity.actionStart(getActivity(), "5");
                         } else if (intellectListBean.getId().equals("5")) {//神灯控车
-                            UIHelper.ToastMessage(getActivity(), "开发中,敬请期待");
+                            ShengxianMainActivity.actionStart(getActivity());
                         }
                         break;
                 }
@@ -839,6 +840,8 @@ public class HomeFragment_New extends BaseFragment implements ObservableScrollVi
                             chiHeWanLeListBeans.addAll(response.body().data.get(0).getIconList());
                         }
                         chiHeWanLeListAdapter.setNewData(chiHeWanLeListBeans);
+
+
                         zhiKongListAdapter.setNewData(intellectListBeanList);
                         shengHuoListAdapter.setNewData(lifeListBeans);
 
