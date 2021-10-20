@@ -42,17 +42,17 @@
     <com.flyco.roundview.RoundRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="147dp"
-        app:rv_cornerRadius="10dp"
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="12dp"
-        app:rv_backgroundColor="@color/white">
+        app:rv_backgroundColor="@color/white"
+        app:rv_cornerRadius="10dp">
 
         <ImageView
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
             android:id="@+id/iv_image"
             android:layout_width="89dp"
             android:layout_height="89dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
             android:background="@mipmap/huanggau" />
 
         <LinearLayout
@@ -107,16 +107,17 @@
     <com.flyco.roundview.RoundRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="147dp"
-        app:rv_backgroundColor="@color/white"
         android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="12dp">
+        android:layout_marginTop="12dp"
+        app:rv_backgroundColor="@color/white"
+        app:rv_cornerRadius="10dp">
 
         <ImageView
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
             android:id="@+id/iv_image1"
             android:layout_width="89dp"
             android:layout_height="89dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
             android:background="@mipmap/youmaicai" />
 
         <LinearLayout
