@@ -40,7 +40,7 @@ public class ShengxianMainActivity extends BaseActivity {
     @Override
     protected void initToolbar() {
         super.initToolbar();
-        tv_title.setText("无人售货柜");
+        tv_title.setText("生鲜柜");
         iv_rightTitle.setVisibility(View.VISIBLE);
         iv_rightTitle.setImageResource(R.mipmap.tianjiashebei_icon_sao);
         tv_title.setTextSize(17);

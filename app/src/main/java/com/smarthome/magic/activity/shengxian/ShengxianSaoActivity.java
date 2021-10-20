@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 import com.smarthome.magic.R;
+import com.smarthome.magic.activity.chelianwang.ScanAddCarActivity;
 import com.smarthome.magic.app.BaseActivity;
 import com.smarthome.magic.app.ConstanceValue;
 import com.smarthome.magic.app.Notice;
@@ -119,7 +120,8 @@ public class ShengxianSaoActivity extends BaseActivity implements QRCodeView.Del
 
             @Override
             public void onDismiss(TishiDialog dialog) {
-
+                mQRCodeView.startSpot();
+                mQRCodeView.setDelegate(ShengxianSaoActivity.this);
             }
         });
         dialog.setTextConfirm("确定");
@@ -133,7 +135,7 @@ public class ShengxianSaoActivity extends BaseActivity implements QRCodeView.Del
         map.put("code", "100026");//正式的
         map.put("key", Urls.key);
 //        map.put("token", UserManager.getManager(mContext).getAppToken());
-        map.put("wx_token", "1111111111");
+        map.put("wx_token", "1634281P32648700e000z000E000t0");
         map.put("line_type", "1");
         map.put("device_ccid", device_ccid);
 
@@ -157,7 +159,8 @@ public class ShengxianSaoActivity extends BaseActivity implements QRCodeView.Del
 
                             @Override
                             public void onDismiss(TishiDialog dialog) {
-
+                                ShengxianWaitActivity.actionStart(mContext);
+                                finish();
                             }
                         });
                         dialog.setTextConfirm("确定");
