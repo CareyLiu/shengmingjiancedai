@@ -3,9 +3,9 @@ package com.smarthome.magic.get_net;
 //网络接口地址
 public class Urls {
     public static String key = "20180305124455yu";//全局请求key
-    public static String SERVER_URL = "https://shop.hljsdkj.com/";//基本地址
-    //public static String SERVER_URL = "https://test.hljsdkj.com/";//测试地址
-    // public static String SERVER_URL = "http://192.168.100.16:8080/";//大ge本地
+//    public static String SERVER_URL = "https://shop.hljsdkj.com/";//基本地址
+    public static String SERVER_URL = "https://test.hljsdkj.com/";//测试地址
+//     public static String SERVER_URL = "http://192.168.0.26:8080";//大ge本地
 //    public static String SERVER_URL = "https://ggw.hljsdkj.com/";//ggw
 
     public static String MESSAGE_URL = SERVER_URL + "wit/app/user";
