@@ -132,11 +132,10 @@ public class ShengxianSaoActivity extends BaseActivity implements QRCodeView.Del
 
     public void saoma(String device_ccid) {
         Map<String, String> map = new HashMap<>();
-        map.put("code", "100026");//正式的
+        map.put("code", "110001");
         map.put("key", Urls.key);
 //        map.put("token", UserManager.getManager(mContext).getAppToken());
         map.put("wx_token", "1634281P32648700e000z000E000t0");
-        map.put("line_type", "1");
         map.put("device_ccid", device_ccid);
 
         Gson gson = new Gson();
