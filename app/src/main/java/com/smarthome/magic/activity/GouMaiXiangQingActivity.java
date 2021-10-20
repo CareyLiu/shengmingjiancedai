@@ -3,6 +3,7 @@ package com.smarthome.magic.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -52,8 +53,10 @@ public class GouMaiXiangQingActivity extends BaseActivity {
                 // TODO Auto-generated method stub
                 try {
                     Thread.sleep(3000);
-dismissProgressDialog();
+                    Looper.prepare();
+                    dismissProgressDialog();
                     UIHelper.ToastMessage(mContext, "扣款成功", Toast.LENGTH_LONG);
+                    Looper.loop();
                 } catch (InterruptedException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
