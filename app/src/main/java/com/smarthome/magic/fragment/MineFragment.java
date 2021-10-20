@@ -230,7 +230,7 @@ public class MineFragment extends BaseFragment implements Observer {
     @Override
     public void onSupportVisible() {
         super.onSupportVisible();
-
+getNet();
     }
 
     @Override

@@ -5,11 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
+
+import androidx.annotation.Nullable;
 
 import com.smarthome.magic.R;
-import com.smarthome.magic.activity.BindBoxActivity;
-import com.smarthome.magic.activity.chelianwang.ScanAddCarActivity;
-import com.smarthome.magic.activity.tongcheng58.TongChengMainActivity;
+import com.smarthome.magic.activity.GouMaiXiangQingActivity;
 import com.smarthome.magic.app.BaseActivity;
 import com.smarthome.magic.config.GlideImageLoader;
 import com.youth.banner.Banner;
@@ -17,7 +18,6 @@ import com.youth.banner.Banner;
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.annotation.Nullable;
 import butterknife.BindView;
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -26,6 +26,8 @@ public class ShengxianMainActivity extends BaseActivity {
 
     @BindView(R.id.banner)
     Banner banner;
+    @BindView(R.id.ll_main)
+    LinearLayout llMain;
 
     @Override
     public int getContentViewResId() {
@@ -42,7 +44,7 @@ public class ShengxianMainActivity extends BaseActivity {
         super.initToolbar();
         tv_title.setText("生鲜柜");
         iv_rightTitle.setVisibility(View.VISIBLE);
-        iv_rightTitle.setImageResource(R.mipmap.tianjiashebei_icon_sao);
+        iv_rightTitle.setImageResource(R.mipmap.jij_shouye_saoyisao);
         tv_title.setTextSize(17);
         tv_title.setTextColor(getResources().getColor(R.color.black));
         mToolbar.setNavigationIcon(R.mipmap.backbutton);
@@ -56,7 +58,8 @@ public class ShengxianMainActivity extends BaseActivity {
         iv_rightTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saoyisao();
+                GouMaiXiangQingActivity.actionStart(mContext);
+                //saoyisao();
             }
         });
     }

@@ -14,6 +14,7 @@
         android:layout_marginBottom="24pt" />
 
     <LinearLayout
+        android:id="@+id/ll_main"
         android:layout_width="634pt"
         android:layout_height="346pt"
         android:layout_gravity="center_horizontal"
