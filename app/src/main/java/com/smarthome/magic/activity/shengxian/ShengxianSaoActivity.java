@@ -135,11 +135,11 @@ public class ShengxianSaoActivity extends BaseActivity implements QRCodeView.Del
         map.put("code", "110001");
         map.put("key", Urls.key);
 //        map.put("token", UserManager.getManager(mContext).getAppToken());
-        map.put("wx_token", "1634281P32648700e000z000E000t0");
+        map.put("wx_token", "1628560a06563500g000q000O000t0");
         map.put("device_ccid", device_ccid);
 
         Gson gson = new Gson();
-        OkGo.<AppResponse<CarBrand.DataBean>>post(Urls.SERVER_URL + "cs/app/user")
+        OkGo.<AppResponse<CarBrand.DataBean>>post(Urls.SERVER_URL + "lc/app/user")
                 .tag(this)//
                 .upJson(gson.toJson(map))
                 .execute(new JsonCallback<AppResponse<CarBrand.DataBean>>() {

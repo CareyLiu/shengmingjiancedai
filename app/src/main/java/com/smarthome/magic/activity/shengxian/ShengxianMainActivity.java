@@ -58,8 +58,8 @@ public class ShengxianMainActivity extends BaseActivity {
         iv_rightTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GouMaiXiangQingActivity.actionStart(mContext);
-                //saoyisao();
+//                GouMaiXiangQingActivity.actionStart(mContext);
+                saoyisao();
             }
         });
     }

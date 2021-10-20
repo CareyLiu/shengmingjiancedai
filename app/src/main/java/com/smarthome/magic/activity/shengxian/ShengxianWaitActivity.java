@@ -7,11 +7,17 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.smarthome.magic.R;
+import com.smarthome.magic.activity.GouMaiXiangQingActivity;
 import com.smarthome.magic.app.BaseActivity;
 
 import androidx.annotation.Nullable;
+import butterknife.BindView;
+import butterknife.OnClick;
 
 public class ShengxianWaitActivity extends BaseActivity {
+
+    @BindView(R.id.view)
+    View view;
 
     @Override
     public int getContentViewResId() {
@@ -58,5 +64,10 @@ public class ShengxianWaitActivity extends BaseActivity {
     @Override
     public boolean isImmersive() {
         return true;
+    }
+
+    @OnClick(R.id.view)
+    public void onViewClicked() {
+        GouMaiXiangQingActivity.actionStart(mContext);
     }
 }
