@@ -145,7 +145,6 @@ public class ServiciLiaoActivity extends BaseActivity implements View.OnClickLis
                 } else if (message.type == ConstanceValue.MSG_SERVICE_CHAT) {
                     MyMessage model = (MyMessage) message.content;
                     clickDaohang(model);
-
                 }
             }
         }));

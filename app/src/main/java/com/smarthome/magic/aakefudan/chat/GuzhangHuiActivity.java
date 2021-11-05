@@ -3,7 +3,12 @@ package com.smarthome.magic.aakefudan.chat;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
+import com.amap.api.maps2d.model.LatLng;
+import com.flyco.dialog.listener.OnOperItemClickL;
+import com.flyco.dialog.widget.ActionSheetDialog;
 import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
@@ -16,9 +21,11 @@ import com.smarthome.magic.app.Notice;
 import com.smarthome.magic.app.UIHelper;
 import com.smarthome.magic.callback.JsonCallback;
 import com.smarthome.magic.config.AppResponse;
+import com.smarthome.magic.config.MyApplication;
 import com.smarthome.magic.config.UserManager;
 import com.smarthome.magic.get_net.Urls;
 import com.smarthome.magic.util.AlertUtil;
+import com.smarthome.magic.util.NavigationUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -93,12 +100,59 @@ public class GuzhangHuiActivity extends BaseActivity {
                         //Token 不正确
                         //notice.content = status.TOKEN_INCORRECT;
                     }
+                } else if (message.type == ConstanceValue.MSG_SERVICE_CHAT) {
+                    MyMessage model = (MyMessage) message.content;
+                    clickDaohang(model);
                 }
             }
         }));
 
 
     }
+
+    private void clickDaohang(MyMessage model) {
+        String items[] = {"高德地图导航", "百度地图导航"};
+        final ActionSheetDialog dialog = new ActionSheetDialog(this, items, null);
+        dialog.isTitleShow(false).show();
+        dialog.setOnOperItemClickL(new OnOperItemClickL() {
+            @Override
+            public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        try {
+                            String lat_x = model.getLat_x();
+                            String lon_y = model.getLon_y();
+                            Double x = Double.valueOf(lat_x);
+                            Double y = Double.valueOf(lon_y);
+                            LatLng latLng = new LatLng(x, y);
+                            NavigationUtils.Navigation(latLng);
+                        } catch (Exception e) {
+                            com.smarthome.magic.app.UIHelper.ToastMessage(MyApplication.getApp().getApplicationContext(), "请下载高德地图后重新尝试", Toast.LENGTH_SHORT);
+                        }
+                        break;
+                    case 1:
+                        try {
+                            String lat_x = model.getLat_x();
+                            String lon_y = model.getLon_y();
+                            Double x = Double.valueOf(lat_x);
+                            Double y = Double.valueOf(lon_y);
+                            LatLng latLng = new LatLng(x, y);
+                            NavigationUtils.NavigationBaidu(latLng, model.getCustomRepairName());
+                        } catch (Exception e) {
+                            com.smarthome.magic.app.UIHelper.ToastMessage(MyApplication.getApp().getApplicationContext(), "请下载百度地图后重新尝试", Toast.LENGTH_SHORT);
+                        }
+
+
+                        break;
+                }
+                dialog.dismiss();
+
+            }
+        });
+
+
+    }
+
 
     @Override
     public int getContentViewResId() {

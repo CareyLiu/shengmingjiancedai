@@ -17,11 +17,13 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.amap.api.services.core.AMapException;
 import com.amap.api.services.geocoder.GeocodeAddress;
 import com.amap.api.services.geocoder.GeocodeQuery;
 import com.amap.api.services.geocoder.GeocodeResult;
 import com.amap.api.services.geocoder.GeocodeSearch;
 import com.amap.api.services.geocoder.RegeocodeResult;
+import com.amap.api.services.poisearch.PoiSearch;
 import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
 import com.bigkoo.pickerview.view.OptionsPickerView;
@@ -696,30 +698,34 @@ public class ZhiNengFamilyManageDetailActivity extends BaseActivity implements V
     }
 
     private void changeTuyaCity() {
-        GeocodeSearch geocodeSearch = new GeocodeSearch(mContext);
-        geocodeSearch.setOnGeocodeSearchListener(new GeocodeSearch.OnGeocodeSearchListener() {
-            @Override
-            public void onRegeocodeSearched(RegeocodeResult regeocodeResult, int i) {
+        try {
+            GeocodeSearch geocodeSearch = new GeocodeSearch(mContext);
+            geocodeSearch.setOnGeocodeSearchListener(new GeocodeSearch.OnGeocodeSearchListener() {
+                @Override
+                public void onRegeocodeSearched(RegeocodeResult regeocodeResult, int i) {
 
-            }
+                }
 
-            @Override
-            public void onGeocodeSearched(GeocodeResult geocodeResult, int i) {
-                if (i == 1000) {
-                    if (geocodeResult != null && geocodeResult.getGeocodeAddressList() != null && geocodeResult.getGeocodeAddressList().size() > 0) {
-                        GeocodeAddress geocodeAddress = geocodeResult.getGeocodeAddressList().get(0);
-                        double latitude = geocodeAddress.getLatLonPoint().getLatitude();//纬度
-                        double longititude = geocodeAddress.getLatLonPoint().getLongitude();//经度
-                        Y.e("经纬度获取成功了 " + latitude + "  " + longititude);
-                        setTuyaCity(latitude, longititude);
-                    } else {
-                        Y.e("编码转换失败");
+                @Override
+                public void onGeocodeSearched(GeocodeResult geocodeResult, int i) {
+                    if (i == 1000) {
+                        if (geocodeResult != null && geocodeResult.getGeocodeAddressList() != null && geocodeResult.getGeocodeAddressList().size() > 0) {
+                            GeocodeAddress geocodeAddress = geocodeResult.getGeocodeAddressList().get(0);
+                            double latitude = geocodeAddress.getLatLonPoint().getLatitude();//纬度
+                            double longititude = geocodeAddress.getLatLonPoint().getLongitude();//经度
+                            Y.e("经纬度获取成功了 " + latitude + "  " + longititude);
+                            setTuyaCity(latitude, longititude);
+                        } else {
+                            Y.e("编码转换失败");
+                        }
                     }
                 }
-            }
-        });
-        GeocodeQuery geocodeQuery = new GeocodeQuery(province_name_pro + city_name_pro + code_name, "29");
-        geocodeSearch.getFromLocationNameAsyn(geocodeQuery);
+            });
+            GeocodeQuery geocodeQuery = new GeocodeQuery(province_name_pro + city_name_pro + code_name, "29");
+            geocodeSearch.getFromLocationNameAsyn(geocodeQuery);
+        } catch (AMapException e) {
+            e.printStackTrace();
+        }
     }
 
     private void setTuyaCity(double latitude, double longititude) {
