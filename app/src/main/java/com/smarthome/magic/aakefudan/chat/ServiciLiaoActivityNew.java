@@ -48,7 +48,6 @@ import com.smarthome.magic.get_net.Urls;
 import com.smarthome.magic.util.AlertUtil;
 import com.smarthome.magic.util.NavigationUtils;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,7 +67,7 @@ import io.rong.imlib.model.Message;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 
-public class ServiciLiaoActivity extends BaseActivity  {
+public class ServiciLiaoActivityNew extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.rl_main_title)
     RelativeLayout rl_main_title;
@@ -79,31 +78,15 @@ public class ServiciLiaoActivity extends BaseActivity  {
     @BindView(R.id.tv_title_name)
     TextView tv_title_name;
 
-    @BindView(R.id.rv_content)
-    RecyclerView rv_content;
-    @BindView(R.id.tv_chezhun)
-    TextView tv_chezhun;
-    @BindView(R.id.tv_chepai)
-    TextView tv_chepai;
-    @BindView(R.id.tv_guzhang)
-    TextView tv_guzhang;
-    @BindView(R.id.map)
-    MapView mapView;
-
     private ZixunModel.DataBean zixunModel;
-    private List<ZixunModel.DataBean.ListBean> weixiuList = new ArrayList<>();
+    private List<ZixunModel.DataBean.ListBean> weixiuList;
     private XiuliAdapter xiuliAdapter;
     private String service_form_id;
     private String user_name_car;
 
-    private ZixunModel.DataBean.ListBean model;
-    private Bundle savedInstanceState;
-    private AMap aMap;
-    private int type = 0;
-
     @Override
     public int getContentViewResId() {
-        return R.layout.activity_kefu_conversation;
+        return R.layout.activity_kefu_conversation_new;
     }
 
     @Override
@@ -225,25 +208,9 @@ public class ServiciLiaoActivity extends BaseActivity  {
         rl_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickFinish();
+                getLiaoTian(mContext, service_form_id);
             }
         });
-
-
-        xiuliAdapter = new XiuliAdapter(R.layout.a_item_service_weixiu_new, weixiuList);
-        rv_content.setLayoutManager(new LinearLayoutManager(mContext));
-        rv_content.setAdapter(xiuliAdapter);
-        xiuliAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                ZixunModel.DataBean.ListBean listBean = weixiuList.get(position);
-                model = listBean;
-                sendDialog();
-            }
-        });
-
-
-        getLiaoTian(mContext, service_form_id);
     }
 
     public void getLiaoTian(Context context, String inst_accid) {
@@ -264,26 +231,7 @@ public class ServiciLiaoActivity extends BaseActivity  {
                     public void onSuccess(Response<AppResponse<ZixunModel.DataBean>> response) {
                         zixunModel = response.body().data.get(0);
                         weixiuList = zixunModel.getList();
-
-                        if (zixunModel == null || weixiuList == null) {
-                            return;
-                        }
-
-                        tv_chezhun.setText("车主姓名：" + zixunModel.getCar_user_name());
-                        tv_chepai.setText("车牌号码：" + zixunModel.getPlate_number());
-
-                        String error_text = zixunModel.getError_text();
-                        if (TextUtils.isEmpty(error_text)) {
-                            tv_guzhang.setText("暂无故障信息");
-                        } else {
-                            tv_guzhang.setText(error_text);
-                        }
-
-                        xiuliAdapter.setNewData(weixiuList);
-                        xiuliAdapter.notifyDataSetChanged();
-
-
-                        initMap();
+                        showZixun();
                     }
 
                     @Override
@@ -303,6 +251,56 @@ public class ServiciLiaoActivity extends BaseActivity  {
                         showLoading();
                     }
                 });
+    }
+
+    private PopupWindow popKeshi;
+    private ZixunModel.DataBean.ListBean model;
+
+    private Bundle savedInstanceState;
+    private AMap aMap;
+    private MapView mMapView;
+    private View ll_master_info;
+    private View ll_guzhang_info;
+    private View ll_mendian_info;
+    private View ll_ditu_info;
+    private View ll_wancheng_info;
+
+    private ImageView iv_master_info;
+    private ImageView iv_guzhang_info;
+    private ImageView iv_mendian_info;
+    private ImageView iv_ditu_info;
+    private ImageView iv_wancheng_info;
+
+    private RecyclerView rv_mendian;
+    private TextView tv_master_name;
+    private TextView tv_master_num;
+    private TextView tv_master_guzhang;
+    private TextView tv_ok;
+
+    private int type = 0;
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.ll_master_info:
+                select(1);
+                break;
+            case R.id.ll_guzhang_info:
+                select(2);
+                break;
+            case R.id.ll_mendian_info:
+                select(3);
+                break;
+            case R.id.ll_ditu_info:
+                select(4);
+                break;
+            case R.id.ll_wancheng_info:
+                select(5);
+                break;
+            case R.id.tv_ok:
+                clickFinish();
+                break;
+        }
     }
 
     private void clickFinish() {
@@ -327,7 +325,9 @@ public class ServiciLiaoActivity extends BaseActivity  {
                             @Override
                             public void onSuccess(Response<AppResponse<ZixunModel.DataBean>> response) {
                                 AlertUtil.t(mContext, "咨询完成");
-                                finish();
+                                if (popKeshi != null) {
+                                    popKeshi.dismiss();
+                                }
                             }
 
                             @Override
@@ -345,6 +345,169 @@ public class ServiciLiaoActivity extends BaseActivity  {
         });
         dialog.show();
 
+    }
+
+    private void select(int i) {
+        mMapView.setVisibility(View.GONE);
+        rv_mendian.setVisibility(View.GONE);
+        tv_master_name.setVisibility(View.GONE);
+        tv_master_num.setVisibility(View.GONE);
+        tv_master_guzhang.setVisibility(View.GONE);
+        tv_ok.setVisibility(View.GONE);
+
+        iv_master_info.setImageResource(R.mipmap.kefu_xia);
+        iv_guzhang_info.setImageResource(R.mipmap.kefu_xia);
+        iv_master_info.setImageResource(R.mipmap.kefu_xia);
+        iv_ditu_info.setImageResource(R.mipmap.kefu_xia);
+        iv_wancheng_info.setImageResource(R.mipmap.kefu_xia);
+
+        switch (i) {
+            case 1:
+                if (type == 1) {
+                    type = 0;
+                } else {
+                    type = 1;
+                    tv_master_name.setVisibility(View.VISIBLE);
+                    tv_master_num.setVisibility(View.VISIBLE);
+                    iv_master_info.setImageResource(R.mipmap.kefu_shang);
+                }
+                break;
+            case 2:
+                if (type == 2) {
+                    type = 0;
+                } else {
+                    type = 2;
+                    tv_master_guzhang.setVisibility(View.VISIBLE);
+                    iv_guzhang_info.setImageResource(R.mipmap.kefu_shang);
+                }
+                break;
+            case 3:
+                if (type == 3) {
+                    type = 0;
+                } else {
+                    type = 3;
+                    rv_mendian.setVisibility(View.VISIBLE);
+                    iv_master_info.setImageResource(R.mipmap.kefu_shang);
+                }
+                break;
+            case 4:
+                if (type == 4) {
+                    type = 0;
+                } else {
+                    type = 4;
+                    mMapView.setVisibility(View.VISIBLE);
+                    iv_ditu_info.setImageResource(R.mipmap.kefu_shang);
+                }
+                break;
+            case 5:
+                if (type == 5) {
+                    type = 0;
+                } else {
+                    type = 5;
+                    tv_ok.setVisibility(View.VISIBLE);
+                    iv_wancheng_info.setImageResource(R.mipmap.kefu_shang);
+                }
+                break;
+        }
+    }
+
+    private void showZixun() {
+        if (zixunModel == null || weixiuList == null) {
+            return;
+        }
+
+        if (popKeshi == null) {
+            View view = getLayoutInflater().inflate(R.layout.pop_kefu_zixun, null);
+            popKeshi = new PopupWindow(view, ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT, true);
+            popKeshi.setFocusable(true);
+            popKeshi.setOutsideTouchable(true);
+            popKeshi.setAnimationStyle(android.R.style.Animation_Dialog); //使用系统的
+            popKeshi.showAsDropDown(rl_main_title);
+
+            mMapView = view.findViewById(R.id.map);
+            rv_mendian = view.findViewById(R.id.rv_mendian);
+            tv_master_name = view.findViewById(R.id.tv_master_name);
+            tv_master_num = view.findViewById(R.id.tv_master_num);
+            tv_master_guzhang = view.findViewById(R.id.tv_master_guzhang);
+            tv_ok = view.findViewById(R.id.tv_ok);
+
+            ll_master_info = view.findViewById(R.id.ll_master_info);
+            ll_guzhang_info = view.findViewById(R.id.ll_guzhang_info);
+            ll_mendian_info = view.findViewById(R.id.ll_mendian_info);
+            ll_ditu_info = view.findViewById(R.id.ll_ditu_info);
+            ll_wancheng_info = view.findViewById(R.id.ll_wancheng_info);
+
+            iv_master_info = view.findViewById(R.id.iv_master_info);
+            iv_guzhang_info = view.findViewById(R.id.iv_guzhang_info);
+            iv_mendian_info = view.findViewById(R.id.iv_mendian_info);
+            iv_ditu_info = view.findViewById(R.id.iv_ditu_info);
+            iv_wancheng_info = view.findViewById(R.id.iv_wancheng_info);
+
+            ll_master_info.setOnClickListener(this);
+            ll_guzhang_info.setOnClickListener(this);
+            ll_mendian_info.setOnClickListener(this);
+            ll_ditu_info.setOnClickListener(this);
+            ll_wancheng_info.setOnClickListener(this);
+            tv_ok.setOnClickListener(this);
+
+            if (weixiuList.size() > 0) {
+                model = weixiuList.get(0);
+                model.setSelect(true);
+                weixiuList.set(0, model);
+            }
+
+            xiuliAdapter = new XiuliAdapter(R.layout.a_item_service_weixiu, weixiuList);
+            rv_mendian.setLayoutManager(new LinearLayoutManager(mContext));
+            rv_mendian.setAdapter(xiuliAdapter);
+            xiuliAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                    for (int i = 0; i < weixiuList.size(); i++) {
+                        ZixunModel.DataBean.ListBean listBean = weixiuList.get(i);
+                        if (i == position) {
+                            listBean.setSelect(true);
+                            model = listBean;
+                            sendDialog();
+                        } else {
+                            listBean.setSelect(false);
+                        }
+                        weixiuList.set(i, listBean);
+                        xiuliAdapter.setNewData(weixiuList);
+                        xiuliAdapter.notifyDataSetChanged();
+                    }
+                }
+            });
+
+            tv_master_name.setText("车主姓名：" + zixunModel.getCar_user_name());
+            tv_master_num.setText("车牌号码：" + zixunModel.getPlate_number());
+
+            String error_text = zixunModel.getError_text();
+            if (TextUtils.isEmpty(error_text)) {
+                tv_master_guzhang.setText("暂无故障信息");
+            } else {
+                tv_master_guzhang.setText(error_text);
+            }
+
+            initMap();
+
+            WindowManager.LayoutParams attributes = getWindow().getAttributes(); //获取程序的WINDOW属性
+            attributes.alpha = 0.5f;  //0.1-1.0
+            getWindow().setAttributes(attributes);// 在把所有属性重新设置回去
+
+            popKeshi.setOnDismissListener(new PopupWindow.OnDismissListener() {
+                @Override
+                public void onDismiss() {
+                    WindowManager.LayoutParams attributes = getWindow().getAttributes(); //获取程序的WINDOW属性
+                    attributes.alpha = 1.0F;  //0.1-1.0
+                    getWindow().setAttributes(attributes);// 在把所有属性重新设置回去
+                }
+            });
+        } else {
+            WindowManager.LayoutParams attributes = getWindow().getAttributes(); //获取程序的WINDOW属性
+            attributes.alpha = 0.5f;  //0.1-1.0
+            getWindow().setAttributes(attributes);// 在把所有属性重新设置回去
+            popKeshi.showAsDropDown(rl_main_title);
+        }
     }
 
     private void sendXiaoxi(ZixunModel.DataBean.ListBean listBean) {
@@ -391,6 +554,9 @@ public class ServiciLiaoActivity extends BaseActivity  {
             public void onSuccess(Message message) {
                 showLoadSuccess();
                 AlertUtil.t(mContext, "发送成功");
+                if (popKeshi != null) {
+                    popKeshi.dismiss();
+                }
             }
 
             /**
@@ -402,13 +568,16 @@ public class ServiciLiaoActivity extends BaseActivity  {
             public void onError(Message message, RongIMClient.ErrorCode errorCode) {
                 showLoadSuccess();
                 AlertUtil.t(mContext, message.toString());
+                if (popKeshi != null) {
+                    popKeshi.dismiss();
+                }
             }
         });
     }
 
     private void initMap() {
         if (aMap == null) {
-            aMap = mapView.getMap();
+            aMap = mMapView.getMap();
             //UiSettings 主要是对地图上的控件的管理，比如指南针、logo位置（不能隐藏）.....
             UiSettings settings = aMap.getUiSettings();
 
@@ -467,7 +636,7 @@ public class ServiciLiaoActivity extends BaseActivity  {
                 e.printStackTrace();
             }
         }
-        mapView.onCreate(savedInstanceState);
+        mMapView.onCreate(savedInstanceState);
         aMap.setOnMarkerClickListener(mMarkerListener);
     }
 
@@ -504,6 +673,7 @@ public class ServiciLiaoActivity extends BaseActivity  {
         dialog.setCilck(new DaohangDialog.OnDaohangCilck() {
             @Override
             public void click(ZixunModel.DataBean.ListBean model) {
+
                 sendXiaoxi(model);
                 dialog.dismiss();
             }

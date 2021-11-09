@@ -1069,15 +1069,19 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:launchMode="singleTop" />
+
         <activity
             android:name=".activity.chelianwang.ScanAddCarActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
-            android:launchMode="singleTop" /> <!-- 会话列表 -->
+            android:launchMode="singleTop" />
+
+        <!-- 会话列表 -->
         <activity
             android:name=".activity.rongyun_liaotian.ConversationListActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize">
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -1088,11 +1092,15 @@
                     android:pathPrefix="/conversationlist"
                     android:scheme="rong" />
             </intent-filter>
-        </activity> <!-- 会话新 -->
+        </activity>
+
+        <!-- 会话服务 -->
         <activity
             android:name=".aakefudan.chat.ServiciLiaoActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -1103,11 +1111,14 @@
                     android:pathPrefix="/conversationnew"
                     android:scheme="rong" />
             </intent-filter>
-        </activity> <!-- 会话故障 -->
+        </activity>
+
+        <!-- 会话故障 -->
         <activity
             android:name=".aakefudan.chat.GuzhangHuiActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -1118,11 +1129,14 @@
                     android:pathPrefix="/conversationGuzhang"
                     android:scheme="rong" />
             </intent-filter>
-        </activity> <!-- 会话界面 -->
+        </activity>
+
+        <!-- 会话界面 -->
         <activity
             android:name=".activity.rongyun_liaotian.ConversationActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
