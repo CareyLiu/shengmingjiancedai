@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="520pt"
+        android:scaleType="fitXY"
+        android:src="@mipmap/chuwugui_main_bg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180pt"
+            android:gravity="bottom">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rl_back"
+                    android:layout_width="88pt"
+                    android:layout_height="88pt">
+
+                    <ImageView
+                        android:layout_width="46pt"
+                        android:layout_height="46pt"
+                        android:layout_centerInParent="true"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/back_white" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:includeFontPadding="false"
+                    android:text="智能柜"
+                    android:textColor="@color/white"
+                    android:textSize="33pt"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="384pt"
+            android:layout_marginHorizontal="19pt" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="524pt"
+            android:layout_marginHorizontal="29pt"
+            android:layout_marginTop="33pt"
+            android:background="@drawable/chuwugui_bg_white_radius_20">
+
+
+            <LinearLayout
+                android:id="@+id/ll_woyaocunbao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130pt"
+                android:layout_marginTop="47pt"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="150pt"
+                    android:layout_height="150pt"
+                    android:src="@mipmap/chuwugui_shouye_tab_cunbao" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18pt"
+                    android:includeFontPadding="false"
+                    android:text="我要存包"
+                    android:textColor="@color/color_1"
+                    android:textSize="27pt"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_woyaoqubao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="103pt"
+                android:layout_marginTop="47pt"
+                android:layout_toRightOf="@id/ll_woyaocunbao"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="150pt"
+                    android:layout_height="150pt"
+                    android:src="@mipmap/chuwugui_shouye_tab_qubao" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18pt"
+                    android:includeFontPadding="false"
+                    android:text="我要取包"
+                    android:textColor="@color/color_1"
+                    android:textSize="27pt"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_cunqujilu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_woyaocunbao"
+                android:layout_marginLeft="130pt"
+                android:layout_marginTop="53pt"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="150pt"
+                    android:layout_height="150pt"
+                    android:src="@mipmap/chuwugui_shouye_tab_jilu" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18pt"
+                    android:includeFontPadding="false"
+                    android:text="存取记录"
+                    android:textColor="@color/color_1"
+                    android:textSize="27pt"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_guanlizhongxin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_woyaocunbao"
+                android:layout_marginLeft="103pt"
+                android:layout_marginTop="53pt"
+                android:layout_toRightOf="@id/ll_woyaocunbao"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="150pt"
+                    android:layout_height="150pt"
+                    android:src="@mipmap/chuwugui_shouye_tab_guanli" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18pt"
+                    android:includeFontPadding="false"
+                    android:text="管理中心"
+                    android:textColor="@color/color_1"
+                    android:textSize="27pt"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

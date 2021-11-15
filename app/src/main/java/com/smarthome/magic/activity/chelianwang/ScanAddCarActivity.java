@@ -1,11 +1,9 @@
 package com.smarthome.magic.activity.chelianwang;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.Log;
@@ -16,21 +14,15 @@ import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 import com.smarthome.magic.R;
-import com.smarthome.magic.activity.DefaultX5WebViewActivity;
-import com.smarthome.magic.activity.HandAddActivity;
-import com.smarthome.magic.activity.shuinuan.Y;
 import com.smarthome.magic.app.BaseActivity;
 import com.smarthome.magic.app.ConstanceValue;
 import com.smarthome.magic.app.Notice;
-import com.smarthome.magic.app.UIHelper;
 import com.smarthome.magic.callback.JsonCallback;
 import com.smarthome.magic.config.AppResponse;
-import com.smarthome.magic.config.PreferenceHelper;
 import com.smarthome.magic.config.UserManager;
 import com.smarthome.magic.dialog.BangdingFailDialog;
 import com.smarthome.magic.get_net.Urls;
 import com.smarthome.magic.model.CarBrand;
-import com.smarthome.magic.util.AlertUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -47,19 +39,8 @@ public class ScanAddCarActivity extends BaseActivity implements QRCodeView.Deleg
     @BindView(R.id.capture_flash)
     ImageView captureFlash;
 
-
-    private String companyid;
-    Long personId;
-    private String roleId;
-    boolean flag = true;
-    boolean input_flag = false;
-
-    private String myCode = null;
-    private String Sn = null;
-
-    private Camera camera;
-    private Camera.Parameters parameter;
-    ProgressDialog waitdialog;
+    private boolean flag = true;
+    private ProgressDialog waitdialog;
 
     /**
      * 用于其他Activty跳转到该Activity
@@ -94,7 +75,6 @@ public class ScanAddCarActivity extends BaseActivity implements QRCodeView.Deleg
         return R.layout.activity_scan1;
     }
 
-
     private void light() {
         if (flag) {
             flag = false;
@@ -120,46 +100,36 @@ public class ScanAddCarActivity extends BaseActivity implements QRCodeView.Deleg
     @Override
     public void onScanQRCodeSuccess(String result) {
         Log.e(tag, result);
-        myCode = result;
         waitdialog = ProgressDialog.show(ScanAddCarActivity.this, null, "已扫描，正在处理···", true, true);
         waitdialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             public void onDismiss(DialogInterface dialog) {
                 mQRCodeView.stopSpot();
             }
         });
-
-        //  UIHelper.ToastMessage(ScanActivity.this, "您已经收到了二维码 code:" + result);
-        vibrate();
-        // mQRCodeView.startSpot();
         waitdialog.dismiss();
         if (result.length() == 24) {
+            vibrate();
             addSheBei(result);
         } else {
-            BangdingFailDialog dialog = new BangdingFailDialog(mContext);
-            dialog.setClick(new BangdingFailDialog.BangdingClick() {
+            new Thread(new Runnable() {
                 @Override
-                public void close() {
-                    Notice notice = new Notice();
-                    notice.type = ConstanceValue.MSG_ADD_CHELIANG_SUCCESS;
-                    sendRx(notice);
-                    finish();
-                }
+                public void run() {
+                    try {
+                        Thread.sleep(1000);
+                        mQRCodeView.startSpot();
+                        mQRCodeView.setDelegate(ScanAddCarActivity.this);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
 
-                @Override
-                public void jixu() {
-                    mQRCodeView.startSpot();
-                    mQRCodeView.setDelegate(ScanAddCarActivity.this);
                 }
-            });
-            dialog.setTextContent("您的设备码不正确");
-            dialog.show();
+            }).start();
         }
     }
 
     public void addSheBei(String ccid) {
         Map<String, String> map = new HashMap<>();
-        map.put("code", "03509");//正式的
-//        map.put("code", "03519");//测试用
+        map.put("code", "03509");//聚易佳
         map.put("key", Urls.key);
         map.put("token", UserManager.getManager(mContext).getAppToken());
         map.put("ccid", ccid);
@@ -268,5 +238,4 @@ public class ScanAddCarActivity extends BaseActivity implements QRCodeView.Deleg
     public boolean showToolBar() {
         return true;
     }
-
 }

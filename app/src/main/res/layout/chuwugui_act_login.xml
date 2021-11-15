@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180pt"
+        android:background="@drawable/chuwugui_bg_yinying"
+        android:gravity="bottom">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_back"
+                android:layout_width="88pt"
+                android:layout_height="88pt">
+
+                <ImageView
+                    android:layout_width="46pt"
+                    android:layout_height="46pt"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/back_black" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:includeFontPadding="false"
+                android:text="登录"
+                android:textColor="@color/color_0"
+                android:textSize="33pt"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="48pt"
+        android:layout_marginTop="52pt"
+        android:background="@drawable/chuwugui_bg_login"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/ed_phone"
+            android:layout_width="match_parent"
+            android:layout_height="80pt"
+            android:background="@null"
+            android:hint="请输入手机号"
+            android:inputType="text"
+            android:paddingHorizontal="24pt"
+            android:paddingTop="22pt"
+            android:textColor="@color/color_3"
+            android:textColorHint="#C9C9C9"
+            android:textSize="27pt" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1pt"
+            android:layout_marginHorizontal="24pt"
+            android:background="@color/line" />
+
+        <EditText
+            android:id="@+id/ed_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="117pt"
+            android:background="@null"
+            android:hint="输入密码"
+            android:inputType="text"
+            android:paddingHorizontal="24pt"
+            android:paddingTop="59pt"
+            android:textColor="@color/color_3"
+            android:textColorHint="#C9C9C9"
+            android:textSize="27pt" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1pt"
+            android:layout_marginHorizontal="24pt"
+            android:background="@color/line" />
+
+        <TextView
+            android:id="@+id/bt_login"
+            android:layout_width="match_parent"
+            android:layout_height="79pt"
+            android:layout_marginHorizontal="50pt"
+            android:layout_marginTop="58pt"
+            android:layout_marginBottom="28pt"
+            android:background="@drawable/chuwugui_bt_login"
+            android:gravity="center"
+            android:text="登录"
+            android:textColor="@color/white"
+            android:textSize="35pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/bt_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30pt"
+            android:padding="20pt"
+            android:text="注册登录"
+            android:textColor="#C9C9C9"
+            android:textSize="29pt" />
+    </LinearLayout>
+</LinearLayout>

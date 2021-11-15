@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180pt"
+        android:background="@drawable/chuwugui_bg_yinying"
+        android:gravity="bottom">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_back"
+                android:layout_width="88pt"
+                android:layout_height="88pt">
+
+                <ImageView
+                    android:layout_width="46pt"
+                    android:layout_height="46pt"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/back_black" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:includeFontPadding="false"
+                android:text="联系客服"
+                android:textColor="@color/color_0"
+                android:textSize="33pt"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10pt"
+        android:background="@drawable/chuwugui_bg_yinying"
+        android:orientation="vertical"
+        android:paddingHorizontal="48pt">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="96pt"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="29pt"
+                android:layout_height="29pt"
+                android:layout_marginRight="11pt"
+                android:src="@mipmap/chuwugui_shouhou" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="售后电话"
+                android:textColor="@color/color_0"
+                android:textSize="27pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_shouhou_dianhua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_0"
+                android:textSize="23pt"
+                tools:text="15112345678" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1pt"
+            android:background="@color/line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="96pt"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="29pt"
+                android:layout_height="29pt"
+                android:layout_marginRight="11pt"
+                android:src="@mipmap/chuwugui_kefu" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="客服电话"
+                android:textColor="@color/color_0"
+                android:textSize="27pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_kefu_dianhua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_0"
+                android:textSize="23pt"
+                tools:text="15112345678" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
