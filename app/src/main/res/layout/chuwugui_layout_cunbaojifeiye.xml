@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/chuwugui_bg">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="208dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="你好!"
+                    android:textColor="#ff559ffe"
+                    android:textSize="67sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="欢迎使用智能柜......"
+                    android:textColor="#ff559ffe"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+
+            android:id="@+id/iv_chuwugui_beijingtu"
+            android:layout_width="134dp"
+            android:layout_height="208dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/chuwugui_dgtu" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_baoyuejifei"
+            android:layout_width="312dp"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/chuwugui_beijingtu"
+            android:gravity="center"
+            android:text="包月计费"
+            android:textColor="#ffffffff"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_linshicunbao"
+            android:layout_width="312dp"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/chuwugui_beijingtu"
+            android:gravity="center"
+            android:text="临时存包"
+            android:textColor="#ffffffff"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
