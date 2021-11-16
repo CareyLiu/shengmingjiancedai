@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="312dp"
+    android:layout_height="211dp"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_baoyuejifei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="27dp"
+            android:text="包月计费标准"
+            android:textColor="#ff000000"
+            android:textSize="23sp" />
+
+
+        <TextView
+            android:id="@+id/tv_jiage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_baoyuejifei"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="350元/月"
+            android:textColor="#ff71adfd"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/tv_quding"
+            android:layout_width="263dp"
+            android:layout_height="39dp"
+            android:layout_below="@+id/tv_jiage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/chuwugui_back_10dp"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="#ffffffff"
+            android:textSize="17sp" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

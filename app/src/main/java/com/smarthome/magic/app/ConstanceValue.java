@@ -191,4 +191,6 @@ public interface ConstanceValue {
 
     int MSG_SHOUYELIEBIAO = 0x10141;//智能家居设备列表
 
+    int MSG_CHUWUGUI_DIANJIJIFEI = 0x10142;//点击确定跳支付
+
 }

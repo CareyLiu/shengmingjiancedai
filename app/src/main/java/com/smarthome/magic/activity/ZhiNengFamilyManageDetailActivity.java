@@ -698,6 +698,7 @@ public class ZhiNengFamilyManageDetailActivity extends BaseActivity implements V
     }
 
     private void changeTuyaCity() {
+
         try {
             GeocodeSearch geocodeSearch = new GeocodeSearch(mContext);
             geocodeSearch.setOnGeocodeSearchListener(new GeocodeSearch.OnGeocodeSearchListener() {
