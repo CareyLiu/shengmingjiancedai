@@ -543,7 +543,7 @@ public class HomeFragment_New extends BaseFragment implements ObservableScrollVi
                             Notice n = new Notice();
                             n.type = ConstanceValue.MSG_ZHINENGJIAJU;
                             RxBus.getDefault().sendRx(n);
-                            UIHelper.ToastMessage(getActivity(), "");
+                            //UIHelper.ToastMessage(getActivity(), "");
                         } else if (intellectListBean.getId().equals("2")) {
                             SheBeiLieBiaoActivity.actionStart(getActivity(), "1");
                         } else if (intellectListBean.getId().equals("3")) {
