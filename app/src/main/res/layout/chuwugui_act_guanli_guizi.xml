@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180pt"
+        android:background="@drawable/chuwugui_bg_yinying"
+        android:gravity="bottom">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_back"
+                android:layout_width="88pt"
+                android:layout_height="88pt">
+
+                <ImageView
+                    android:layout_width="46pt"
+                    android:layout_height="46pt"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/back_black" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:includeFontPadding="false"
+                android:text="柜子列表"
+                android:textColor="@color/color_0"
+                android:textSize="33pt"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1pt"
+        android:background="@color/line" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/chuwugui_bg_yinying"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="84pt"
+            android:layout_marginHorizontal="48pt"
+            android:layout_marginTop="40pt"
+            android:background="@drawable/chuwugui_bt_fang"
+            android:gravity="center"
+            android:text="一键全开"
+            android:textColor="@color/white"
+            android:textSize="35pt" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="84pt"
+            android:layout_marginHorizontal="48pt"
+            android:layout_marginTop="9pt"
+            android:background="@drawable/chuwugui_bt_fang"
+            android:gravity="center"
+            android:text=" 修改地址"
+            android:textColor="@color/white"
+            android:textSize="35pt" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="84pt"
+            android:layout_marginHorizontal="48pt"
+            android:layout_marginTop="9pt"
+            android:background="@drawable/chuwugui_bt_fang"
+            android:gravity="center"
+            android:text=" 修改名称"
+            android:textColor="@color/white"
+            android:textSize="35pt" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="48pt"
+            android:paddingTop="50pt"
+            android:paddingBottom="40pt">
+
+            <View
+                android:layout_width="29pt"
+                android:layout_height="29pt"
+                android:layout_marginRight="9pt"
+                android:background="@drawable/chuwugui_guizi_kongxianzhong" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="空闲中"
+                android:textColor="@color/color_0"
+                android:textSize="27pt" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="29pt"
+                android:layout_height="29pt"
+                android:layout_marginRight="9pt"
+                android:background="@drawable/chuwugui_guizi_shiyongzhong" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="使用中"
+                android:textColor="@color/color_0"
+                android:textSize="27pt" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="29pt"
+                android:layout_height="29pt"
+                android:layout_marginRight="9pt"
+                android:background="@drawable/chuwugui_guizi_jinyong" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="禁用"
+                android:textColor="@color/color_0"
+                android:textSize="27pt" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1pt"
+        android:background="@color/line" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
