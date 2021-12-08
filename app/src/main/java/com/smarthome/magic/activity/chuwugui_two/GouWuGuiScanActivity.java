@@ -1,22 +1,31 @@
-package com.smarthome.magic.activity.chuwugui;
+package com.smarthome.magic.activity.chuwugui_two;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.gson.Gson;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.model.Response;
 import com.smarthome.magic.R;
-import com.smarthome.magic.activity.DefaultX5WebViewActivity;
+import com.smarthome.magic.activity.chuwugui_two.model.SaomaModl;
+import com.smarthome.magic.activity.shuinuan.Y;
+import com.smarthome.magic.app.App;
 import com.smarthome.magic.app.BaseActivity;
-import com.smarthome.magic.app.UIHelper;
+import com.smarthome.magic.callback.JsonCallback;
+import com.smarthome.magic.config.AppResponse;
+import com.smarthome.magic.config.PreferenceHelper;
 import com.smarthome.magic.config.UserManager;
+import com.smarthome.magic.get_net.Urls;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -30,36 +39,17 @@ public class GouWuGuiScanActivity extends BaseActivity implements QRCodeView.Del
     @BindView(R.id.capture_flash)
     ImageView captureFlash;
 
+    private boolean flag = true;
+    private ProgressDialog waitdialog;
 
-    private String companyid;
-    Long personId;
-    private String roleId;
-    boolean flag = true;
-    boolean input_flag = false;
-
-    private String myCode = null;
-    private String Sn = null;
-
-    private Camera camera;
-    private Camera.Parameters parameter;
-    ProgressDialog waitdialog;
 
     /**
      * 用于其他Activty跳转到该Activity
-     *
-     * @param context
      */
     public static void actionStart(Context context) {
         Intent intent = new Intent(context, GouWuGuiScanActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
-    }
-
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
     }
 
     @Override
@@ -68,15 +58,12 @@ public class GouWuGuiScanActivity extends BaseActivity implements QRCodeView.Del
         initToolbar();
         mQRCodeView.startSpot();
         mQRCodeView.setDelegate(this);
-        // mQRCodeView.setResultHandler(this);
-
     }
 
     @Override
     public int getContentViewResId() {
         return R.layout.gouwugui_activity_scan1;
     }
-
 
     private void light() {
         if (flag) {
@@ -94,7 +81,6 @@ public class GouWuGuiScanActivity extends BaseActivity implements QRCodeView.Del
         }
     }
 
-
     private void vibrate() {
         Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         vibrator.vibrate(200);
@@ -103,7 +89,6 @@ public class GouWuGuiScanActivity extends BaseActivity implements QRCodeView.Del
     @Override
     public void onScanQRCodeSuccess(String result) {
         Log.e(tag, result);
-        myCode = result;
         waitdialog = ProgressDialog.show(GouWuGuiScanActivity.this, null, "已扫描，正在处理···", true, true);
         waitdialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             public void onDismiss(DialogInterface dialog) {
@@ -111,14 +96,48 @@ public class GouWuGuiScanActivity extends BaseActivity implements QRCodeView.Del
             }
         });
 
-        //  UIHelper.ToastMessage(ScanActivity.this, "您已经收到了二维码 code:" + result);
         vibrate();
-        // mQRCodeView.startSpot();
 
+        saomacunbao(result);
+    }
 
+    private void saomacunbao(String device_ccid) {
+        String chuwuguiType = PreferenceHelper.getInstance(this).getString(App.CHUWUGUI_TYPE, "");
+        Map<String, String> map = new HashMap<>();
+        if (chuwuguiType.equals("1")){
+            map.put("code", "120025");
+        }else {
+            map.put("code", "120001");
+        }
+        map.put("key", Urls.key);
+        map.put("token", UserManager.getManager(mContext).getAppToken());
+        map.put("device_ccid", device_ccid);
+        map.put("subsystem_id", "tlc");
+        Gson gson = new Gson();
+        OkGo.<AppResponse<SaomaModl.DataBean>>post(Urls.SERVER_URL + "lc/app/inst/tlc_user")
+                .tag(this)//
+                .upJson(gson.toJson(map))
+                .execute(new JsonCallback<AppResponse<SaomaModl.DataBean>>() {
+                    @Override
+                    public void onSuccess(Response<AppResponse<SaomaModl.DataBean>> response) {
+                        SaomaModl.DataBean dataBean = response.body().data.get(0);
+                        ChuwuguiZhifuActivity.actionStart(mContext, dataBean);
+                        finish();
+                    }
 
+                    @Override
+                    public void onError(Response<AppResponse<SaomaModl.DataBean>> response) {
+                        super.onError(response);
+                        Y.tError(response);
+                        finish();
+                    }
 
-
+                    @Override
+                    public void onFinish() {
+                        super.onFinish();
+                        waitdialog.dismiss();
+                    }
+                });
     }
 
     @Override
@@ -127,33 +146,14 @@ public class GouWuGuiScanActivity extends BaseActivity implements QRCodeView.Del
         mQRCodeView.startCamera();
     }
 
-    /**
-     * 扫描结果对话框
-     *
-     * @param msg
-     */
-    public void showDialog(final String msg) {
-        new AlertDialog.Builder(GouWuGuiScanActivity.this).setTitle("扫描结果").setMessage(msg)
-                .setNegativeButton("返回", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        waitdialog.dismiss();
-                        dialog.dismiss();
-                        mQRCodeView.startSpotAndShowRect();
-                    }
-                }).show();
-    }
-
-
     @OnClick({R.id.capture_flash})
     public void onClick(View view) {
         switch (view.getId()) {
-
             case R.id.capture_flash:
                 light();
                 break;
         }
     }
-
 
     @Override
     protected void onStop() {
@@ -179,7 +179,6 @@ public class GouWuGuiScanActivity extends BaseActivity implements QRCodeView.Del
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //imm.hideSoftInputFromWindow(findViewById(R.id.cl_layout).getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                 finish();
             }
         });
@@ -189,5 +188,4 @@ public class GouWuGuiScanActivity extends BaseActivity implements QRCodeView.Del
     public boolean showToolBar() {
         return true;
     }
-
 }

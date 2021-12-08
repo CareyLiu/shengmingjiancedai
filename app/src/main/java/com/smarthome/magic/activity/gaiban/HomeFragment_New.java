@@ -179,7 +179,6 @@ public class HomeFragment_New extends BaseFragment implements ObservableScrollVi
         getYaoQingNet(getActivity());
         //初始化定位
         initLocation();
-        startLocation();
         // getZhuJiNet();
     }
 
@@ -490,8 +489,6 @@ public class HomeFragment_New extends BaseFragment implements ObservableScrollVi
 //                            startActivity(intent);
                             // KongQiJianCe_NewActvity.actionStart(getActivity(),"0x1100033");
 //                            Intent intent = new Intent(getActivity(), TuBiaoActivity.class);
-//                            startActivity(intent);
-//                            Intent intent = new Intent(getActivity(), ShiJianFenFaDemoActivity.class);
 //                            startActivity(intent);
                         } else {
                             Toast.makeText(getActivity(), "该应用需要赋予访问相机的权限，不开启将无法正常工作！", Toast.LENGTH_LONG).show();
@@ -1119,13 +1116,20 @@ public class HomeFragment_New extends BaseFragment implements ObservableScrollVi
     private AMapLocationClientOption locationOption = null;
 
     private void initLocation() {
-        //初始化client
-        locationClient = new AMapLocationClient(getActivity().getApplicationContext());
-        locationOption = getDefaultOption();
-        //设置定位参数
-        locationClient.setLocationOption(locationOption);
-        // 设置定位监听
-        locationClient.setLocationListener(gaodeDingWeiListener);
+        try {
+            //初始化client
+            locationClient = new AMapLocationClient(getContext());
+            locationOption = getDefaultOption();
+            //设置定位参数
+            locationClient.setLocationOption(locationOption);
+            // 设置定位监听
+            locationClient.setLocationListener(gaodeDingWeiListener);
+
+            startLocation();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**

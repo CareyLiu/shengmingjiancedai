@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_width="match_parent"
+        android:layout_height="96pt"
+        android:layout_marginHorizontal="48pt"
+        android:layout_marginBottom="19pt"
+        android:background="@drawable/chuwuguitwo_guizi_select_sel">
+
+        <TextView
+            android:id="@+id/tv_guizi_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="19pt"
+            android:includeFontPadding="false"
+            android:text="大箱[10箱可用]"
+            android:textColor="@color/white"
+            android:textSize="23pt" />
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="19pt"
+            android:includeFontPadding="false"
+            android:text="0.01/小时"
+            android:textColor="@color/white"
+            android:textSize="23pt" />
+
+        <ImageView
+            android:id="@+id/iv_select"
+            android:layout_width="42pt"
+            android:layout_height="42pt"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@mipmap/chuwugui_item_duihao" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="624pt"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chuwugui_bg_white_radius_10"
+            android:orientation="vertical"
+            android:paddingBottom="20pt">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50pt"
+                android:layout_marginBottom="30pt"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="温馨提示"
+                android:textColor="@color/color_0"
+                android:textSize="45pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_tishi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30pt"
+                android:layout_marginBottom="30pt"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="02号柜状态为空闲中，请选择操作类型。"
+                android:textColor="@color/color_0"
+                android:textSize="27pt" />
+
+            <TextView
+                android:id="@+id/bt_kaixiang"
+                android:layout_width="match_parent"
+                android:layout_height="78pt"
+                android:layout_marginHorizontal="50pt"
+                android:layout_marginBottom="30pt"
+                android:background="@drawable/chuwugui_guanli_kaixiang"
+                android:gravity="center"
+                android:text="开箱"
+                android:textColor="@color/white"
+                android:textSize="35pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bt_jinyong"
+                android:layout_width="match_parent"
+                android:layout_height="78pt"
+                android:layout_marginHorizontal="50pt"
+                android:layout_marginBottom="30pt"
+                android:background="@drawable/chuwugui_guanli_jingyong"
+                android:gravity="center"
+                android:text="禁用"
+                android:textColor="@color/white"
+                android:textSize="35pt"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_close"
+            android:layout_width="80pt"
+            android:layout_height="80pt"
+            android:layout_gravity="right">
+
+            <ImageView
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/close" />
+        </RelativeLayout>
+    </FrameLayout>
+</LinearLayout>

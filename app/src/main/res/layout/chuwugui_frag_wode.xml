@@ -149,6 +149,33 @@
             android:background="@color/line" />
 
         <LinearLayout
+            android:id="@+id/ll_baoyuedingdan"
+            android:layout_width="match_parent"
+            android:layout_height="96pt"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="48pt">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="包月订单"
+                android:textColor="@color/color_0"
+                android:textSize="27pt" />
+
+            <ImageView
+                android:layout_width="21pt"
+                android:layout_height="35pt"
+                android:src="@drawable/push_gray" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1pt"
+            android:layout_marginHorizontal="48pt"
+            android:background="@color/line" />
+
+        <LinearLayout
             android:id="@+id/ll_daoqixufu"
             android:layout_width="match_parent"
             android:layout_height="96pt"
@@ -160,7 +187,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:includeFontPadding="false"
-                android:text="到期续费"
+                android:text="包月续费"
                 android:textColor="@color/color_0"
                 android:textSize="27pt" />
 

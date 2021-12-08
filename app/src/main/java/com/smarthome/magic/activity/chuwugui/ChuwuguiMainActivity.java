@@ -11,10 +11,15 @@ import android.widget.TextView;
 
 import com.gyf.barlibrary.ImmersionBar;
 import com.smarthome.magic.R;
+import com.smarthome.magic.activity.chuwugui.config.ChuwuguiValue;
 import com.smarthome.magic.activity.chuwugui.frag.CShouyeFragment;
 import com.smarthome.magic.activity.chuwugui.frag.CWodeFragment;
 import com.smarthome.magic.activity.shuinuan.Y;
+import com.smarthome.magic.activity.yaokongqi.model.YaokongKeyModel;
 import com.smarthome.magic.app.BaseActivity;
+import com.smarthome.magic.app.ConstanceValue;
+import com.smarthome.magic.app.Notice;
+import com.smarthome.magic.util.SoundPoolUtils;
 import com.smarthome.magic.view.NoScrollViewPager;
 
 import java.util.ArrayList;
@@ -28,6 +33,8 @@ import androidx.viewpager.widget.PagerAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 
 public class ChuwuguiMainActivity extends BaseActivity {
 
@@ -72,7 +79,20 @@ public class ChuwuguiMainActivity extends BaseActivity {
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
         initVpg();
+        initHuidiao();
+    }
 
+    private void initHuidiao() {
+        _subscriptions.add(toObservable().observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<Notice>() {
+            @Override
+            public void call(Notice message) {
+                if (message.type == ChuwuguiValue.MSG_CWG_BACK_SHOUYE) {
+                    finish();
+                } else if (message.type == ChuwuguiValue.MSG_CWG_BACK_WODE) {
+                    clickShouye();
+                }
+            }
+        }));
     }
 
     private void initVpg() {

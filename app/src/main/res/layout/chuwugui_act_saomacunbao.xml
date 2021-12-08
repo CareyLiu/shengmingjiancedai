@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140pt"
+        android:background="@drawable/chuwugui_bg_yinying"
+        android:gravity="bottom">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_back"
+                android:layout_width="88pt"
+                android:layout_height="88pt">
+
+                <ImageView
+                    android:layout_width="46pt"
+                    android:layout_height="46pt"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/back_black" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:includeFontPadding="false"
+                android:text="扫码存包"
+                android:textColor="@color/color_0"
+                android:textSize="33pt"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="609pt"
+        android:layout_height="497pt"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="38pt"
+        android:src="@mipmap/chuwugui_empty" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/bt_saoma"
+        android:layout_width="match_parent"
+        android:layout_height="84pt"
+        android:layout_marginHorizontal="48pt"
+        android:layout_marginBottom="80pt"
+        android:background="@drawable/chuwugui_bt_fang"
+        android:gravity="center"
+        android:text="扫描机柜二维码"
+        android:textColor="@color/white"
+        android:textSize="35pt" />
+</LinearLayout>

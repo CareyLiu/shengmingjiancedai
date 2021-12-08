@@ -150,16 +150,11 @@ public class MyApplication extends MultiDexApplication {
     public static Activity activity_main;
 
 
-    //String mqttUrl = "tcp://192.168.1.127";//大个本地
-    String mqttUrl = "tcp://mqtt.hljsdkj.com";//正式
-    //String mqttUrl = "tcp://ggw.hljsdkj.com";//ggw
-
     public String getMqttUrl() {
         if (Urls.SERVER_URL.equals("https://shop.hljsdkj.com/")) {
             return "tcp://mqtt.hljsdkj.com";
         } else {
-            return "tcp://ggw.hljsdkj.com";
-//            return "tcp://mqtt.hljsdkj.com";
+            return "tcp://mqrn.hljsdkj.com";
         }
     }
 

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140pt"
+        android:background="@drawable/chuwugui_bg_yinying"
+        android:gravity="bottom">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_back"
+                android:layout_width="88pt"
+                android:layout_height="88pt">
+
+                <ImageView
+                    android:layout_width="46pt"
+                    android:layout_height="46pt"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/back_black" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:includeFontPadding="false"
+                android:text="使用记录"
+                android:textColor="@color/color_0"
+                android:textSize="33pt"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1pt"
+        android:background="@color/line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90pt"
+        android:background="@drawable/chuwugui_bg_yinying">
+
+        <RelativeLayout
+            android:id="@+id/ll_cunbaozhong"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_cunbaozhong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:includeFontPadding="false"
+                android:text="存包中"
+                android:textColor="#4DB6FB"
+                android:textSize="30pt" />
+
+            <View
+                android:id="@+id/line_cunbaozhong"
+                android:layout_width="match_parent"
+                android:layout_height="2pt"
+                android:layout_alignParentBottom="true"
+                android:background="#4DB6FB" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_yijieshu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_yijieshu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:includeFontPadding="false"
+                android:text="已结束"
+                android:textColor="@color/color_9"
+                android:textSize="30pt" />
+
+            <View
+                android:id="@+id/line_yijieshu"
+                android:layout_width="match_parent"
+                android:layout_height="2pt"
+                android:layout_alignParentBottom="true"
+                android:background="#4DB6FB"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_qiankuan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_qiankuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:includeFontPadding="false"
+                android:text="欠款列表"
+                android:textColor="@color/color_9"
+                android:textSize="30pt" />
+
+            <View
+                android:id="@+id/line_qiankuan"
+                android:layout_width="match_parent"
+                android:layout_height="2pt"
+                android:layout_alignParentBottom="true"
+                android:background="#4DB6FB"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1pt"
+        android:background="@color/line" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20pt" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

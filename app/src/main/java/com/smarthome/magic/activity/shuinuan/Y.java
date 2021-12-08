@@ -61,7 +61,7 @@ public class Y {
     }
 
     public static void tError(Response response) {
-        t(response.getException().getMessage());
+        tLong(response.getException().getMessage());
     }
 
     public static Resources getResources() {

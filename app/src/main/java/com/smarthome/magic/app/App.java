@@ -795,4 +795,8 @@ public class App extends MultiDexApplication {
             Manifest.permission.READ_EXTERNAL_STORAGE
     };
 
+
+    public static final String CHUWUGUI_PAY = "CHUWUGUI_PAY";
+    public static final String CHUWUGUI_TYPE = "CHUWUGUI_TYPE";
+
 }

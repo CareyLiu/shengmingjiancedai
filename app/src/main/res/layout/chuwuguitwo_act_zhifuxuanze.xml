@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140pt"
+        android:background="@drawable/chuwugui_bg_yinying"
+        android:gravity="bottom">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_back"
+                android:layout_width="88pt"
+                android:layout_height="88pt">
+
+                <ImageView
+                    android:layout_width="46pt"
+                    android:layout_height="46pt"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/back_black" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:includeFontPadding="false"
+                android:text="选择云柜"
+                android:textColor="@color/color_0"
+                android:textSize="33pt"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="29pt"
+                android:layout_marginTop="19pt"
+                android:background="@drawable/chuwugui_bg_login"
+                android:orientation="vertical"
+                android:paddingHorizontal="29pt">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="29pt"
+                    android:layout_marginBottom="19pt"
+                    android:includeFontPadding="false"
+                    android:text="测试柜"
+                    android:textColor="@color/color_0"
+                    android:textSize="35pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="29pt"
+                    android:includeFontPadding="false"
+                    android:text="地址"
+                    android:textColor="@color/color_0"
+                    android:textSize="27pt" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="29pt"
+                android:layout_marginTop="19pt"
+                android:background="@drawable/chuwugui_bg_login"
+                android:orientation="vertical"
+                android:paddingHorizontal="29pt">
+
+                <LinearLayout
+                    android:id="@+id/ll_cunchu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="29pt"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="29pt"
+                        android:layout_height="29pt"
+                        android:layout_marginRight="10pt"
+                        android:src="@mipmap/chuwuguitwo_shijian" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="存储时长"
+                        android:textColor="@color/color_0"
+                        android:textSize="27pt"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_cunchu"
+                    android:layout_marginTop="15pt"
+                    android:layout_marginBottom="29pt"
+                    android:includeFontPadding="false"
+                    android:text="2小时"
+                    android:textColor="#559FFE"
+                    android:textSize="27pt" />
+
+                <ImageView
+                    android:layout_width="18pt"
+                    android:layout_height="30pt"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/push_gray" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="29pt"
+                android:layout_marginTop="19pt"
+                android:background="@drawable/chuwugui_bg_login"
+                android:orientation="vertical"
+                android:paddingHorizontal="29pt">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="29pt"
+                    android:layout_marginBottom="19pt"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="29pt"
+                        android:layout_height="29pt"
+                        android:layout_marginRight="10pt"
+                        android:src="@mipmap/chuwuguitwo_guizi" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="箱子规格"
+                        android:textColor="@color/color_0"
+                        android:textSize="27pt"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1pt"
+        android:background="@color/line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90pt"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_daizhifu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="待支付￥0.01"
+            android:textColor="#FF0000"
+            android:textSize="35pt" />
+
+        <TextView
+            android:id="@+id/bt_zhifu_kaixiang"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/blue"
+            android:gravity="center"
+            android:text="支付并开箱"
+            android:textColor="#FFFFFF"
+            android:textSize="35pt" />
+    </LinearLayout>
+</LinearLayout>

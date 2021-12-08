@@ -24,6 +24,7 @@ import com.smarthome.magic.app.RxBus;
 import com.smarthome.magic.app.RxUtils;
 import com.smarthome.magic.util.TUtil;
 
+import butterknife.ButterKnife;
 import rx.Observable;
 import rx.subscriptions.CompositeSubscription;
 
@@ -93,6 +94,7 @@ public abstract class BasicFragment<T extends BasicPresenter, E extends BasicMod
 
             }
         }
+        ButterKnife.bind(this, rootView);
         initToolBar(rootView);
         initView(rootView);
         mvpCreate();

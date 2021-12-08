@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="192pt"
+        android:layout_marginHorizontal="48pt"
+        android:layout_marginBottom="30pt"
+        android:background="@drawable/chuwugui_bg_guanli_list">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28pt"
+            android:layout_marginTop="57pt"
+            android:includeFontPadding="false"
+            android:text="12号门寄存柜"
+            android:textColor="@color/color_0"
+            android:textSize="35pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_dizhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_marginLeft="28pt"
+            android:layout_marginTop="15pt"
+            android:includeFontPadding="false"
+            android:text="地址：哈尔滨云柜智能"
+            android:textColor="@color/color_0"
+            android:textSize="27pt" />
+
+        <TextView
+            android:id="@+id/tv_zhuangtai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="28pt"
+            android:layout_marginTop="60pt"
+            android:layout_marginRight="28pt"
+            android:includeFontPadding="false"
+            android:text="在线"
+            android:textColor="@color/color_0"
+            android:textSize="27pt" />
+    </RelativeLayout>
+</LinearLayout>

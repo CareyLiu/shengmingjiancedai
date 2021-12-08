@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="48pt"
+        android:layout_marginTop="20pt"
+        android:background="@drawable/chuwugui_bg_dingdan"
+        android:orientation="vertical"
+        android:paddingHorizontal="30pt"
+        android:paddingBottom="15pt">
+
+        <TextView
+            android:id="@+id/tv_guizi_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50pt"
+            android:layout_marginBottom="15pt"
+            android:includeFontPadding="false"
+            android:text="12号柜"
+            android:textColor="@color/color_0"
+            android:textSize="29pt"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15pt"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_xiangzi_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="11号箱"
+                android:textColor="@color/color_0"
+                android:textSize="27pt" />
+
+            <TextView
+                android:id="@+id/tv_zongjia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="￥25.00"
+                android:textColor="#559FFE"
+                android:textSize="27pt" />
+
+            <TextView
+                android:id="@+id/tv_yajin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="（押金￥5.00）"
+                android:textColor="@color/color_9"
+                android:textSize="27pt" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_zhifushijian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15pt"
+            android:includeFontPadding="false"
+            android:text="支付时间：2011-11-11"
+            android:textColor="@color/color_0"
+            android:textSize="27pt" />
+
+        <TextView
+            android:id="@+id/tv_fanhuanjine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15pt"
+            android:includeFontPadding="false"
+            android:text="返回金额：1.00"
+            android:textColor="@color/color_0"
+            android:textSize="27pt" />
+
+        <TextView
+            android:id="@+id/tv_fanhuanshijian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15pt"
+            android:includeFontPadding="false"
+            android:text="返还时间：2011-11-11"
+            android:textColor="@color/color_0"
+            android:textSize="27pt" />
+
+        <TextView
+            android:id="@+id/tv_dizhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15pt"
+            android:includeFontPadding="false"
+            android:text="地址：哈尔滨"
+            android:textColor="@color/color_0"
+            android:textSize="27pt" />
+    </LinearLayout>
+</LinearLayout>

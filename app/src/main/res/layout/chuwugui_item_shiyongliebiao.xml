@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="48pt"
+        android:layout_marginBottom="20pt"
+        android:background="@drawable/chuwugui_bg_login"
+        android:orientation="vertical"
+        android:paddingHorizontal="19pt"
+        android:paddingBottom="10pt">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30pt"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="4pt"
+                android:layout_height="23pt"
+                android:layout_marginRight="10pt"
+                android:background="#4DB6FB" />
+
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="2021-05-31 12：00：39"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3pt"
+            android:layout_marginTop="20pt"
+            android:layout_marginBottom="20pt"
+            android:background="@drawable/chuwugui_line_xuxian" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="设备名称"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+
+            <TextView
+                android:id="@+id/tv_device_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="一号柜"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="箱子号码"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+
+            <TextView
+                android:id="@+id/tv_box_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="1号"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="箱子规格"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+
+            <TextView
+                android:id="@+id/tv_guige"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="小箱"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_yucun_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="预存时长"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+
+            <TextView
+                android:id="@+id/tv_yucun_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="2小时30分20秒"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="订单总额"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+
+            <TextView
+                android:id="@+id/tv_money_zong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="0.02元"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_daifu_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="待付金额:"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+
+            <TextView
+                android:id="@+id/tv_daifu_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="0.01元"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="计费规则"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+
+            <TextView
+                android:id="@+id/tv_biaozhun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="0.01元/小时"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="存包位置"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="0.01元/小时"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="使用时长"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+
+            <TextView
+                android:id="@+id/tv_shiyong_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="2小时30分20秒"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_qiankuan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10pt"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="欠款金额"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+
+            <TextView
+                android:id="@+id/tv_money_qian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="2小时30分20秒"
+                android:textColor="@color/color_3"
+                android:textSize="27pt" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/bt_jiekuan"
+            android:layout_width="match_parent"
+            android:layout_height="78pt"
+            android:layout_marginHorizontal="50pt"
+            android:layout_marginVertical="10pt"
+            android:background="@drawable/chuwugui_guanli_kaixiang"
+            android:gravity="center"
+            android:text="结清欠款"
+            android:textColor="@color/white"
+            android:textSize="35pt"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>
