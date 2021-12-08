@@ -15,6 +15,8 @@ import com.ali.auth.third.core.model.Constants;
 import com.alibaba.wireless.security.open.middletier.fc.IFCActionCallback;
 import com.smarthome.magic.R;
 import com.smarthome.magic.activity.DiagnosisActivity;
+import com.smarthome.magic.activity.chuwugui.config.ChuwuguiValue;
+import com.smarthome.magic.activity.shuinuan.Y;
 import com.smarthome.magic.app.App;
 import com.smarthome.magic.app.ConstanceValue;
 import com.smarthome.magic.app.Notice;
@@ -80,6 +82,10 @@ public class WXPayEntryActivity extends AppCompatActivity implements IWXAPIEvent
 
         String wodeDingDanZhiFu = PreferenceHelper.getInstance(this).getString(App.DINGDANZHIFU, "");
         String baziPay = PreferenceHelper.getInstance(this).getString(App.BAZI_PAY, "");
+
+        String chuwuguiPay = PreferenceHelper.getInstance(this).getString(App.CHUWUGUI_PAY, "");
+
+        Y.e("我支付成功过了么阿阿阿" + resp.errCode);
 
         if (resp.getType() == ConstantsAPI.COMMAND_PAY_BY_WX) {
 
@@ -166,6 +172,13 @@ public class WXPayEntryActivity extends AppCompatActivity implements IWXAPIEvent
                     n.type = ConstanceValue.MSG_SAOMASUCCESS;
                     RxBus.getDefault().sendRx(n);
                     WXPayEntryActivity.this.finish();
+                } else if (!StringUtils.isEmpty(chuwuguiPay)) {
+                    //储物柜支付成功
+                    PreferenceHelper.getInstance(this).removeKey(App.CHUWUGUI_PAY);
+                    Notice n = new Notice();
+                    n.type = ChuwuguiValue.MSG_CWG_PAY_SUCCESS;
+                    RxBus.getDefault().sendRx(n);
+                    WXPayEntryActivity.this.finish();
                 } else {
                     WXPayEntryActivity.this.finish();
                 }
@@ -198,6 +211,13 @@ public class WXPayEntryActivity extends AppCompatActivity implements IWXAPIEvent
                     PreferenceHelper.getInstance(this).removeKey(App.BAZI_PAY);
                     Notice n = new Notice();
                     n.type = ConstanceValue.MSG_SAOMAFAILE;
+                    RxBus.getDefault().sendRx(n);
+                    WXPayEntryActivity.this.finish();
+                } else if (!StringUtils.isEmpty(chuwuguiPay)) {
+                    //储物柜支付失败
+                    PreferenceHelper.getInstance(this).removeKey(App.CHUWUGUI_PAY);
+                    Notice n = new Notice();
+                    n.type = ChuwuguiValue.MSG_CWG_PAY_FAIL;
                     RxBus.getDefault().sendRx(n);
                     WXPayEntryActivity.this.finish();
                 } else {

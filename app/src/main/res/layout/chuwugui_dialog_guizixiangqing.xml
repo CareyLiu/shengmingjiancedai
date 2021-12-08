@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="624pt"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chuwugui_bg_white_radius_10"
+            android:orientation="vertical"
+            android:paddingBottom="20pt">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50pt"
+                android:gravity="bottom|center_horizontal">
+
+                <TextView
+                    android:id="@+id/tv_box_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:includeFontPadding="false"
+                    android:text="10"
+                    android:textColor="#4DB6FB"
+                    android:textSize="192pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="号箱"
+                    android:textColor="@color/color_0"
+                    android:textSize="27pt" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30pt"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="33pt"
+                    android:layout_height="33pt"
+                    android:layout_marginRight="10pt"
+                    android:src="@mipmap/chuwugui_shijian_icon" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="30分钟"
+                    android:textColor="@color/color_0"
+                    android:textSize="35pt" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/bt_jieshu"
+                android:layout_width="match_parent"
+                android:layout_height="78pt"
+                android:layout_marginHorizontal="50pt"
+                android:layout_marginBottom="30pt"
+                android:background="@drawable/chuwugui_guanli_kaixiang"
+                android:gravity="center"
+                android:text="结束使用"
+                android:textColor="@color/white"
+                android:textSize="35pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bt_dianhua"
+                android:layout_width="match_parent"
+                android:layout_height="78pt"
+                android:layout_marginHorizontal="50pt"
+                android:layout_marginBottom="30pt"
+                android:background="@drawable/chuwugui_guanli_kaixiang"
+                android:gravity="center"
+                android:text="拨打电话"
+                android:textColor="@color/white"
+                android:textSize="35pt"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_close"
+            android:layout_width="80pt"
+            android:layout_height="80pt"
+            android:layout_gravity="right">
+
+            <ImageView
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/close" />
+        </RelativeLayout>
+    </FrameLayout>
+</LinearLayout>

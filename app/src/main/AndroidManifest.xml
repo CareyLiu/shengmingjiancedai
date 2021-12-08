@@ -1937,12 +1937,6 @@
             android:windowSoftInputMode="adjustNothing|stateHidden" />
 
         <activity
-            android:name=".util.demo.ShiJianFenFaDemoActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustNothing|stateHidden" />
-
-        <activity
             android:name=".activity.yaokongqi.KongQiJingHuaPeiActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:screenOrientation="portrait"
@@ -2015,5 +2009,110 @@
             android:windowSoftInputMode="stateHidden|adjustResize"
             tools:ignore="LockedOrientationActivity" />
 
+
+        <!--   储物柜首页选择     -->
+        <activity
+            android:name=".activity.chuwugui_two.ChuwuguiMainSelectActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity" />
+
+
+        <!--   储物柜首页     -->
+        <activity
+            android:name=".activity.chuwugui.ChuwuguiMainActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity" />
+
+        <!--   联系客服     -->
+        <activity
+            android:name=".activity.chuwugui.LianxikefuActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity" />
+
+        <!--   管理列表     -->
+        <activity
+            android:name=".activity.chuwugui.GuanliLiebiaoActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity" />
+
+        <!--   管理列表详情     -->
+        <activity
+            android:name=".activity.chuwugui.GuanliXiangqingActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity" />
+
+        <!--   包月订单     -->
+        <activity
+            android:name=".activity.chuwugui.BaoyueDingdanActivty"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity" />
+
+        <!--   储物柜扫码     -->
+        <activity
+            android:name=".activity.chuwugui_two.GouWuGuiScanActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity" />
+
+        <!--   使用记录     -->
+        <activity
+            android:name=".activity.chuwugui_two.ShiyongjiluActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity" />
+
+        <!--   储物柜公众号     -->
+        <activity
+            android:name=".activity.chuwugui_two.ChuwuguiShouyeActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity" />
+
+        <!--   扫码存包     -->
+        <activity
+            android:name=".activity.chuwugui_two.SaomacunbaoActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity" />
+
+        <!--   选择柜子支付     -->
+        <activity
+            android:name=".activity.chuwugui_two.ChuwuguiZhifuActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity" />
+
+        <!--   选择柜子支付     -->
+        <activity
+            android:name=".activity.chuwugui_two.QubaoliebiaoActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity" />
+
+        <!--   储物柜存包页     -->
+        <activity
+            android:name=".activity.chuwugui_two.ChuwuguiCunbaoMainActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            tools:ignore="LockedOrientationActivity" />
     </application>
 </manifest>

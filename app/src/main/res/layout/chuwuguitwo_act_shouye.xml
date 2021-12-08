@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="520pt"
+        android:scaleType="fitXY"
+        android:src="@mipmap/chuwugui_main_bg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="140pt"-->
+        <!--            android:gravity="bottom">-->
+
+        <!--            <RelativeLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content">-->
+
+        <!--                <RelativeLayout-->
+        <!--                    android:id="@+id/rl_back"-->
+        <!--                    android:layout_width="88pt"-->
+        <!--                    android:layout_height="88pt">-->
+
+        <!--                    <ImageView-->
+        <!--                        android:layout_width="46pt"-->
+        <!--                        android:layout_height="46pt"-->
+        <!--                        android:layout_centerInParent="true"-->
+        <!--                        android:scaleType="centerCrop"-->
+        <!--                        android:src="@mipmap/back_white" />-->
+        <!--                </RelativeLayout>-->
+
+        <!--                <TextView-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_centerInParent="true"-->
+        <!--                    android:includeFontPadding="false"-->
+        <!--                    android:text="智能柜"-->
+        <!--                    android:textColor="@color/white"-->
+        <!--                    android:textSize="35pt"-->
+        <!--                    android:textStyle="bold" />-->
+        <!--            </RelativeLayout>-->
+        <!--        </LinearLayout>-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140pt"
+            android:background="@drawable/chuwugui_bg_yinying"
+            android:gravity="bottom">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rl_back"
+                    android:layout_width="88pt"
+                    android:layout_height="88pt">
+
+                    <ImageView
+                        android:layout_width="46pt"
+                        android:layout_height="46pt"
+                        android:layout_centerInParent="true"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/back_black" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:includeFontPadding="false"
+                    android:text="智能柜"
+                    android:textColor="@color/color_0"
+                    android:textSize="33pt"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="210pt"
+                    android:layout_marginBottom="10pt">
+
+                    <ImageView
+                        android:id="@+id/iv_head"
+                        android:layout_width="154pt"
+                        android:layout_height="154pt"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="48pt"
+                        android:src="@mipmap/home_pic_touxiang_man" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="48pt"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20pt"
+                            android:includeFontPadding="false"
+                            android:text="姓名"
+                            android:textColor="@color/white"
+                            android:textSize="46pt"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="15112345678"
+                            android:textColor="@color/white"
+                            android:textSize="27pt" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/bt_guanliyuan"
+                    android:layout_width="578pt"
+                    android:layout_height="196pt"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16pt"
+                    android:background="@mipmap/chuwuguitwo_guanli"
+                    android:gravity="center"
+                    android:text="管理中心"
+                    android:textColor="@color/white"
+                    android:textSize="46pt"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/bt_cunbao"
+                    android:layout_width="578pt"
+                    android:layout_height="196pt"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16pt"
+                    android:src="@mipmap/chuwuguitwo_cunbao" />
+
+                <ImageView
+                    android:id="@+id/bt_qubao"
+                    android:layout_width="578pt"
+                    android:layout_height="196pt"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16pt"
+                    android:src="@mipmap/chuwuguitwo_qubao" />
+
+                <ImageView
+                    android:id="@+id/bt_jilu"
+                    android:layout_width="578pt"
+                    android:layout_height="196pt"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16pt"
+                    android:src="@mipmap/chuwuguitwo_jilu" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10pt"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="如有问题请联系客服："
+                        android:textColor="@color/color_9"
+                        android:textSize="27pt" />
+
+                    <TextView
+                        android:id="@+id/tv_kefu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="18012341234"
+                        android:textColor="#37A3FF"
+                        android:textSize="27pt" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</FrameLayout>

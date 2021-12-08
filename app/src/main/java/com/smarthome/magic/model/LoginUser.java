@@ -68,6 +68,7 @@ public class LoginUser {
          * user_id_key : 104n105x106D125g139c112o107D114n111g
          * server_id : 01/
          * power_state : 1
+         * is_manage : 储物柜管理员 1是  2不是
          */
 
         private String of_user_id;
@@ -81,6 +82,15 @@ public class LoginUser {
         private String power_state;
         private String subsystem_id;
         public String invitation_code_state;
+        public String is_manage;
+
+        public String getIs_manage() {
+            return is_manage;
+        }
+
+        public void setIs_manage(String is_manage) {
+            this.is_manage = is_manage;
+        }
 
         public String getSubsystem_id() {
             return subsystem_id;

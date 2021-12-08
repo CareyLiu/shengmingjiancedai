@@ -25,12 +25,13 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.smarthome.magic.R;
 import com.smarthome.magic.activity.DefaultX5WebViewActivity;
+import com.smarthome.magic.activity.LoginActivity;
 import com.smarthome.magic.activity.SettingActivity;
+import com.smarthome.magic.activity.chuwugui_two.ChuwuguiMainSelectActivity;
 import com.smarthome.magic.activity.dingdan.MyOrderActivity;
 import com.smarthome.magic.activity.fenxiang_tuisong.TuanYouTuiGuangActivity;
 import com.smarthome.magic.activity.gouwuche.GouWuCheActivity;
 import com.smarthome.magic.activity.tuangou.KaQuanActivity;
-import com.smarthome.magic.activity.wode_page.AboutUsActivity;
 import com.smarthome.magic.activity.wode_page.DianPuListActivity;
 import com.smarthome.magic.activity.wode_page.MyQianBaoActivity;
 import com.smarthome.magic.activity.wode_page.ShangPinShouCangActivity;
@@ -230,7 +231,7 @@ public class MineFragment extends BaseFragment implements Observer {
     @Override
     public void onSupportVisible() {
         super.onSupportVisible();
-getNet();
+        getNet();
     }
 
     @Override
@@ -310,7 +311,10 @@ getNet();
                         srLSmart.finishRefresh();
                         //  MineModel.DataBean dataBean = new MineModel.DataBean();
                         dataBean = response.body().data.get(0);
-                        Glide.with(getActivity()).load(response.body().data.get(0).getUser_img_url()).into(rivImage);
+                        String user_img_url = response.body().data.get(0).getUser_img_url();
+                        Glide.with(getActivity()).load(user_img_url).into(rivImage);
+                        PreferenceHelper.getInstance(getActivity()).putString("user_img_url", user_img_url);
+
                         tvName.setText(dataBean.getUser_name());
                         tvPhone.setText(dataBean.getUser_phone());
                         tvShoucangjiaNumber.setText(dataBean.getCollect_ware_count());
@@ -507,7 +511,9 @@ getNet();
                 break;
 
             case R.id.iv_about_us:
-                AboutUsActivity.actionStart(getActivity());
+//                AboutUsActivity.actionStart(getActivity());
+
+                ChuwuguiMainSelectActivity.actionStart(getActivity());
                 break;
             case R.id.iv_bazism:
                 BazismMainActivity.actionStart(getActivity());

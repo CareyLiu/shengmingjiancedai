@@ -60,6 +60,10 @@ public class UserManager {
         return PreferenceHelper.getInstance(mContext).getString("token_rong", "");
     }
 
+    public String getIsManage() {
+        return PreferenceHelper.getInstance(mContext).getString("is_manage", "");
+    }
+
     //保存用户信息
     public void saveUser(LoginUser.DataBean user) {
         if (user != null) {
@@ -72,11 +76,8 @@ public class UserManager {
             PreferenceHelper.getInstance(mContext).putString("user_id_key", user.getUser_id_key());
             PreferenceHelper.getInstance(mContext).putString("server_id", user.getServer_id());
             PreferenceHelper.getInstance(mContext).putString("power_state", user.getPower_state());
-
-            //  Log.i("server_id1", PreferenceHelper.getInstance(mContext).getString("server_id", user.getServer_id()));
+            PreferenceHelper.getInstance(mContext).putString("is_manage", user.getIs_manage());
         }
-
-
     }
 
     /**
