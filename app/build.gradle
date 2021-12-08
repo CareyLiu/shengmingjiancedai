@@ -363,4 +363,7 @@ dependencies {
     implementation 'cn.jiguang.sdk.plugin:xiaomi:3.8.5'
     implementation 'cn.jiguang.sdk.plugin:oppo:3.8.5'
     implementation 'cn.jiguang.sdk.plugin:vivo:3.8.5'
+
+    //华为二维码扫描
+    implementation 'com.huawei.hms:scanplus:1.1.1.301'
 }
