@@ -9,7 +9,7 @@ public class ChuLiGuZhangMa {
     public static String getGuZhangMa(String ccid, String codeMa) {
 
         String code = ccid.substring(17, 20);
-        String newCode=codeMa;
+        String newCode = codeMa;
         switch (code) {
             case "001":
             case "002":
@@ -35,10 +35,47 @@ public class ChuLiGuZhangMa {
                 break;
             case "011":
                 break;
+            case "017":
+                newCode = zhunCodeLaona(codeMa);
+                break;
             default:
                 return codeMa;
         }
 
+        return newCode;
+    }
+
+    private static String zhunCodeLaona(String codeMa) {
+        String newCode = null;
+
+        if (codeMa.equals("3")) {
+            newCode = "5";
+        } else if (codeMa.equals("6")) {
+            newCode = "8";
+        } else if (codeMa.equals("4")) {
+            newCode = "2";
+        } else if (codeMa.equals("2") || codeMa.equals("1")) {
+            newCode = "1";
+        } else if (codeMa.equals("7")) {
+            newCode = "3";
+        } else if (codeMa.equals("8")) {
+            newCode = "4";
+        } else if (codeMa.equals("9")) {
+            newCode = "6";
+        } else if (codeMa.equals("5")) {
+            newCode = "11";
+        } else if (codeMa.equals("11")) {
+            newCode = "9";
+        } else if (codeMa.equals("10")) {
+            newCode = "10";
+        } else if (codeMa.equals("18")) {
+            newCode = "18";
+        } else if (codeMa.equals("15") || codeMa.equals("16")) {
+            newCode = "12";
+        }
+
+        Log.i("ChuLiGuZhangLaona", "codeMa" + codeMa);
+        Log.i("ChuLiGuZhangLaona", "newCode" + newCode);
         return newCode;
     }
 
@@ -69,8 +106,8 @@ public class ChuLiGuZhangMa {
             newCode = "12";
         }
 
-        Log.i("ChuLiGuZhang", "codeMa"+codeMa);
-        Log.i("ChuLiGuZhang", "newCode"+newCode);
+        Log.i("ChuLiGuZhang", "codeMa" + codeMa);
+        Log.i("ChuLiGuZhang", "newCode" + newCode);
         return newCode;
     }
 

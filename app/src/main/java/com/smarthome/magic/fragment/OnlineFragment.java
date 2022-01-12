@@ -111,8 +111,8 @@ public class OnlineFragment extends BaseFragment implements Observer {
                     switch (view.getId()) {
                         case R.id.constrain:
                             if (mDatas.get(position).device_type.equals("1")) {
-                            //    mDatas.get(position).ccid = "aaaaaaaaaaaaaa2010070018";
-
+//                                mDatas.get(position).ccid = "aaaaaaaaaaaaaa2010070018";
+//                                mDatas.get(position).ccid = "aaaaaaaaaaaaaa2480010028";
                                 int i = mDatas.get(position).ccid.length() - 1;
                                 String str = String.valueOf(mDatas.get(position).ccid.charAt(i));
                                 PreferenceHelper.getInstance(getActivity()).putString("car_server_id", str + "/");

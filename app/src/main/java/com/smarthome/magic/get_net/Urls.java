@@ -3,8 +3,8 @@ package com.smarthome.magic.get_net;
 //网络接口地址
 public class Urls {
     public static String key = "20180305124455yu";//全局请求key
-//    public static String SERVER_URL = "https://shop.hljsdkj.com/";//基本地址
-    public static String SERVER_URL = "https://mqrn.hljsdkj.com/";//储物柜
+    public static String SERVER_URL = "https://shop.hljsdkj.com/";//基本地址
+//    public static String SERVER_URL = "https://mqrn.hljsdkj.com/";//储物柜
 //    public static String SERVER_URL = "http://192.168.1.127:8080/";//大个本地
 //    public static String SERVER_URL = "http://192.168.1.110:8080/";//杨哲本地
 
@@ -17,7 +17,8 @@ public class Urls {
     public static String ZIJIANHOME = SERVER_URL + "shop_new/app";//自建商城
     public static String ZIYINGFENLEI = SERVER_URL + "shop_new/app";//自建分类
     public static String JDWEB = "https://jmall.ixiaocong.net/#/index/Q6HUHA";//京东的连接
-    public static String PDDWEB = "https://u.jd.com/SgYbff";//京东的连接
+//    public static String PDDWEB = "https://u.jd.com/SgYbff";//京东的连接
+    public static String PDDWEB = "https://youhui.pinduoduo.com";//拼多多的链接
     public static String HOME_PICTURE_HOME = SERVER_URL + "shop_new/app/user";
 
     public static String WIT_APP = SERVER_URL + "wit/app";
