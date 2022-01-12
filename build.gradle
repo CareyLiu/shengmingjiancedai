@@ -7,7 +7,6 @@ buildscript {
         maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
         maven { url 'http://maven.aliyun.com/nexus/content/repositories/google' }
         mavenCentral()
-        maven { url 'https://dl.bintray.com/umsdk/release' }
         google()
         jcenter()
         maven {url 'http://developer.huawei.com/repo/'}
@@ -39,11 +38,8 @@ allprojects {
         maven {
             url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories/"
         }
-        maven { url "https://dl.bintray.com/rongcloud/maven" }
-        maven { url "https://dl.bintray.com/jetbrains/anko" }
-        maven { url 'https://dl.bintray.com/umsdk/release' }
         maven {url 'http://developer.huawei.com/repo/'}
-
+        maven { url "https://dl.bintray.com/rongcloud/maven" }
     }
 }
 

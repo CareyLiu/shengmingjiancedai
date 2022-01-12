@@ -117,7 +117,6 @@ public class UserInfoActivity extends BaseActivity {
     }
 
     public void requestData() {
-
         Map<String, String> map = new HashMap<>();
         map.put("code", "03205");
         map.put("key", Urls.key);
