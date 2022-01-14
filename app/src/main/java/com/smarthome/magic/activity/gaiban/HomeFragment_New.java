@@ -1116,6 +1116,9 @@ public class HomeFragment_New extends BaseFragment implements ObservableScrollVi
     private AMapLocationClientOption locationOption = null;
 
     private void initLocation() {
+        PreferenceHelper.getInstance(getActivity()).putString(WEIDU, "45.666043");
+        PreferenceHelper.getInstance(getActivity()).putString(JINGDU, "126.605713");
+
         try {
             //初始化client
             locationClient = new AMapLocationClient(getContext());
