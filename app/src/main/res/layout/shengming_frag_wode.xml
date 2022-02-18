@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5F4FF"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="576pt"
+                android:background="@mipmap/shengming_jiancebj"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="88pt"
+                    android:layout_marginTop="40pt">
+
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="88pt"
+                        android:layout_height="88pt"
+                        android:padding="24pt"
+                        android:src="@mipmap/back_white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:includeFontPadding="false"
+                        android:text="我的"
+                        android:textColor="@color/white"
+                        android:textSize="35pt"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/iv_set"
+                        android:layout_width="88pt"
+                        android:layout_height="88pt"
+                        android:layout_alignParentRight="true"
+                        android:padding="24pt"
+                  />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_head"
+                    android:layout_width="192pt"
+                    android:layout_height="192pt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="162pt"
+                    android:src="@mipmap/touxiangnan" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_head"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="18pt"
+                    android:includeFontPadding="false"
+                    android:text="姓名"
+                    android:textColor="@color/white"
+                    android:textSize="27pt"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56pt"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="29pt">
+
+                <View
+                    android:layout_width="4pt"
+                    android:layout_height="27pt"
+                    android:layout_marginRight="10pt"
+                    android:background="@drawable/bt_login_denglu" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="我的设备"
+                    android:textColor="@color/color_1"
+                    android:textSize="29pt" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="156pt"
+                android:layout_marginHorizontal="29pt"
+                android:layout_marginTop="15pt"
+                android:background="@drawable/shengming_wihte_line"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingHorizontal="19pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10pt"
+                    android:includeFontPadding="false"
+                    android:text="设备名称：生命体征监测带"
+                    android:textColor="#01D3AA"
+                    android:textSize="29pt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10pt"
+                    android:includeFontPadding="false"
+                    android:text="设备编号：149C7656FFB1"
+                    android:textColor="@color/color_3"
+                    android:textSize="23pt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="设备有效期：2022-12-12"
+                    android:textColor="@color/color_3"
+                    android:textSize="23pt" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/bt_saoma"
+                android:layout_width="match_parent"
+                android:layout_height="88pt"
+                android:layout_marginHorizontal="29pt"
+                android:layout_marginTop="60pt"
+                android:background="@drawable/bt_login_denglu"
+                android:gravity="center"
+                android:text="绑定设备"
+                android:textColor="@color/white"
+                android:textSize="35pt" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

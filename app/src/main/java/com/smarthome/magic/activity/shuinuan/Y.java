@@ -19,6 +19,7 @@ import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
 
 /**
@@ -301,8 +302,8 @@ public class Y {
     /**
      * 获取日期
      */
-    public static Date getData(String date) {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+    public static Date getDate(String date) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {
             Date parse = format.parse(date);
             return parse;
@@ -315,18 +316,54 @@ public class Y {
     /**
      * 获取日期精确到秒
      */
-    public static String getDataS(Date date) {
+    public static String getDateS(Date date) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         format.setTimeZone(TimeZone.getTimeZone("GMT+08"));
         return format.format(date);
     }
 
     /**
-     * 获取日期精确
+     * 获取日期精确到日
      */
-    public static String getData(Date date) {
+    public static String getDate(Date date) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         format.setTimeZone(TimeZone.getTimeZone("GMT+08"));
         return format.format(date);
+    }
+
+    /**
+     * 获取日期精确到日无杠
+     */
+    public static String getDateWu(Date date) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+        format.setTimeZone(TimeZone.getTimeZone("GMT+08"));
+        return format.format(date);
+    }
+
+
+
+    /**
+     * 获取时分秒
+     */
+    public static String getTime(Date date) {
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+        format.setTimeZone(TimeZone.getTimeZone("GMT+08"));
+        return format.format(date);
+    }
+
+
+    public static Date parseServerTime(String serverTime, String format) {
+        if (format == null || format.isEmpty()) {
+            format = "yyyyMMddHHmmss";
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat(format, Locale.CHINESE);
+        sdf.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
+        Date date = null;
+        try {
+            date = sdf.parse(serverTime);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return date;
     }
 }

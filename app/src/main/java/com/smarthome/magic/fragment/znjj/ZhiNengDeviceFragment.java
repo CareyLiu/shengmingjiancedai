@@ -28,6 +28,9 @@ import com.smarthome.magic.activity.ZhiNengJiajuWeiYuAutoActivity;
 import com.smarthome.magic.activity.ZhiNengJiaoHuaAutoActivity;
 import com.smarthome.magic.activity.ZhiNengRoomDeviceDetailAutoActivity;
 import com.smarthome.magic.activity.ZhiNengZhuJiDetailAutoActivity;
+import com.smarthome.magic.activity.shengming.SmDeviceActivity;
+import com.smarthome.magic.activity.shengming.shengmingmodel.CreateSession;
+import com.smarthome.magic.activity.shengming.utils.UrlUtils;
 import com.smarthome.magic.activity.shuinuan.Y;
 import com.smarthome.magic.activity.tuya_device.add.TuyaDeviceAddActivity;
 import com.smarthome.magic.activity.tuya_device.camera.TuyaCameraActivity;
@@ -139,7 +142,7 @@ public class ZhiNengDeviceFragment extends BaseFragment {
                              / 31.光敏控制 32.燃气报警 33.风扇 34.雷达
                              */
                             String type = mDatas.get(i).getDevice_type();
-                            if (type.equals("01")||type.equals("02")){
+                            if (type.equals("01") || type.equals("02")) {
                                 if (zhiNengDeviceListAdapter != null) {
                                     zhiNengDeviceListAdapter.notifyItemChanged(i);
                                 }
@@ -195,6 +198,16 @@ public class ZhiNengDeviceFragment extends BaseFragment {
         }
         mDatas.clear();
         mDatas.addAll(dataBean.get(0).getDevice());
+
+        ZhiNengModel.DataBean.DeviceBean deviceBean = new ZhiNengModel.DataBean.DeviceBean();
+        deviceBean.setDevice_name("生命体征带");
+        deviceBean.setDevice_type("40");
+        deviceBean.setRoom_name("默认房间");
+        deviceBean.setDevice_type_pic("http://yjn-znjj.oss-cn-hangzhou.aliyuncs.com/20220208141753000001.png");
+        deviceBean.setOnline_state("1");
+        deviceBean.setWork_state("1");
+        mDatas.add(deviceBean);
+
         if (zhiNengDeviceListAdapter != null) {
             zhiNengDeviceListAdapter.notifyDataSetChanged();
         }
@@ -383,6 +396,8 @@ public class ZhiNengDeviceFragment extends BaseFragment {
                             KongQiJingHuaKongZhiActivity.actionStart(getActivity(), deviceBean.getDevice_id(), member_type);
                         } else if (deviceBean.getDevice_type().equals("39")) {//万能遥控器
                             ZhenWanNengYaoKongQiKongZhi.actionStart(getActivity(), deviceBean.getDevice_id(), member_type);
+                        } else if (deviceBean.getDevice_type().equals("40")) {//生命体征检测带
+                            enterShengming();
                         } else {
                             String ty_device_ccid = deviceBean.getTy_device_ccid();
                             if (TextUtils.isEmpty(ty_device_ccid)) {
@@ -405,15 +420,8 @@ public class ZhiNengDeviceFragment extends BaseFragment {
                                 } else if (deviceBean.getDevice_type().equals(TuyaConfig.CATEGORY_WANGGUAN)) {//涂鸦网关
                                     DeviceWangguanActivity.actionStart(getActivity(), member_type, deviceBean.getDevice_id(), ty_device_ccid, deviceBean.getDevice_name(), deviceBean.getRoom_name());
                                 } else if (deviceBean.getDevice_type().equals(TuyaConfig.CATEGORY_WNYKQ)) {//万能遥控器
-//                                    AbsPanelCallerService service = MicroContext.getServiceManager().findServiceByInterface(AbsPanelCallerService.class.getName());
-//                                    service.goPanelWithCheckAndTip(getActivity(), ty_device_ccid);
-
-                                    Bundle bundle = new Bundle();
-                                    bundle.putString("device_id", deviceBean.getDevice_id());
-                                    bundle.putString("device_type", deviceBean.getDevice_type());
-                                    bundle.putString("member_type", member_type);
-                                    bundle.putString("work_state", deviceBean.getWork_state());
-                                    startActivity(new Intent(getActivity(), ZhiNengRoomDeviceDetailAutoActivity.class).putExtras(bundle));
+                                    AbsPanelCallerService service = MicroContext.getServiceManager().findServiceByInterface(AbsPanelCallerService.class.getName());
+                                    service.goPanelWithCheckAndTip(getActivity(), ty_device_ccid);
                                 } else {//其他涂鸦设备
                                     AbsPanelCallerService service = MicroContext.getServiceManager().findServiceByInterface(AbsPanelCallerService.class.getName());
                                     service.goPanelWithCheckAndTip(getActivity(), ty_device_ccid);
@@ -424,6 +432,31 @@ public class ZhiNengDeviceFragment extends BaseFragment {
                 }
             }
         });
+    }
+
+    private void enterShengming() {
+        showProgressDialog();
+        String timestamp = System.currentTimeMillis() + "";
+        String ltoken = UrlUtils.getMainLtoken(timestamp);
+        OkGo.<CreateSession>get(UrlUtils.createSession)
+                .params("customerCode", UrlUtils.CUSTOMERCODE)
+                .params("timestamp", timestamp)
+                .params("ltoken", ltoken)
+                .tag(this)//
+                .execute(new JsonCallback<CreateSession>() {
+                    @Override
+                    public void onSuccess(Response<CreateSession> response) {
+                        String sessionId = response.body().getData();
+                        PreferenceHelper.getInstance(getContext()).putString("sm_sessionId", sessionId);
+                        SmDeviceActivity.actionStart(getActivity());
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        super.onFinish();
+                        dismissProgressDialog();
+                    }
+                });
     }
 
     private TishiDialog tishiDialog;

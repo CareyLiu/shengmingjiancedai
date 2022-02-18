@@ -862,7 +862,7 @@ public class ShangjiaBianjiActivity extends BaseActivity implements TakePhoto.Ta
         TimePickerView timePicker = new TimePickerBuilder(this, new OnTimeSelectListener() {
             @Override
             public void onTimeSelect(Date date, View v) {//选中事件回调
-                String dataS = Y.getData(date);
+                String dataS = Y.getDate(date);
                 if (pos == 0) {
                     ir_inst_begin_time = dataS;
                     tvStopTime.setText(ir_inst_begin_time);

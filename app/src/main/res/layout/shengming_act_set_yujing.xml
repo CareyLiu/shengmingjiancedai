@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="心率异常预警开关"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+
+                <ImageView
+                    android:id="@+id/iv_switch_hrAlarmEnable"
+                    android:layout_width="102pt"
+                    android:layout_height="62pt"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/switch_close" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_hrAlarmMax"
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="心率上限预警值"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+                <TextView
+                    android:id="@+id/tv_hrAlarmMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="10"
+                    android:textColor="@color/color_9"
+                    android:textSize="27pt" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_hrAlarmMin"
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="心率下限预警值"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+                <TextView
+                    android:id="@+id/tv_hrAlarmMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="10"
+                    android:textColor="@color/color_9"
+                    android:textSize="27pt" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="呼吸异常预警开关"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+
+                <ImageView
+                    android:id="@+id/iv_switch_rrAlarmEnable"
+                    android:layout_width="102pt"
+                    android:layout_height="62pt"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/switch_close" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_rrAlarmMax"
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="呼吸上限预警值"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+                <TextView
+                    android:id="@+id/tv_rrAlarmMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="10"
+                    android:textColor="@color/color_9"
+                    android:textSize="27pt" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_rrAlarmMin"
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="呼吸下限预警值"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+                <TextView
+                    android:id="@+id/tv_rrAlarmMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="10"
+                    android:textColor="@color/color_9"
+                    android:textSize="27pt" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="呼吸暂停预警开关"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+
+                <ImageView
+                    android:id="@+id/iv_switch_rrStopEnable"
+                    android:layout_width="102pt"
+                    android:layout_height="62pt"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/switch_close" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="脱离在床预警开关"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+
+                <ImageView
+                    android:id="@+id/iv_switch_offBedEnable"
+                    android:layout_width="102pt"
+                    android:layout_height="62pt"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/switch_close" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_leaveDura"
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="脱离监测在床时间上限"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+                <TextView
+                    android:id="@+id/tv_leaveDura"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="10"
+                    android:textColor="@color/color_9"
+                    android:textSize="27pt" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="全天预警开关"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+
+                <ImageView
+                    android:id="@+id/iv_switch_sleepAllDayEnable"
+                    android:layout_width="102pt"
+                    android:layout_height="62pt"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/switch_close" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="午间预警开关"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+
+                <ImageView
+                    android:id="@+id/iv_switch_noonSleepDayEnable"
+                    android:layout_width="102pt"
+                    android:layout_height="62pt"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/switch_close" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_sleepDayDuraStart"
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="午睡起始时间段"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+                <TextView
+                    android:id="@+id/tv_sleepDayDuraStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="12:00"
+                    android:textColor="@color/color_9"
+                    android:textSize="27pt" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_sleepDayDuraStop"
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="午睡结束时间段"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+                <TextView
+                    android:id="@+id/tv_sleepDayDuraStop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="13:00"
+                    android:textColor="@color/color_9"
+                    android:textSize="27pt" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="晚间预警开关"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+                <ImageView
+                    android:id="@+id/iv_switch_nightSleepDayEnable"
+                    android:layout_width="102pt"
+                    android:layout_height="62pt"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/switch_close" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_sleepNightDuraStart"
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="晚间起始时间段"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+                <TextView
+                    android:id="@+id/tv_sleepNightDuraStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="12:00"
+                    android:textColor="@color/color_9"
+                    android:textSize="27pt" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_sleepNightDuraStop"
+                android:layout_width="match_parent"
+                android:layout_height="96pt"
+                android:paddingHorizontal="20pt"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="晚间结束时间段"
+                    android:textColor="@color/color_2"
+                    android:textSize="27pt" />
+
+                <TextView
+                    android:id="@+id/tv_sleepNightDuraStop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="13:00"
+                    android:textColor="@color/color_9"
+                    android:textSize="27pt" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/bt_save"
+                android:layout_width="match_parent"
+                android:layout_height="76pt"
+                android:layout_marginHorizontal="29pt"
+                android:layout_marginTop="39pt"
+                android:layout_marginBottom="30pt"
+                android:background="@drawable/bt_login_denglu"
+                android:gravity="center"
+                android:text="保存"
+                android:textColor="@color/white"
+                android:textSize="35pt" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

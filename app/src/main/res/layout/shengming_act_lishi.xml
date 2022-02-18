@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="88pt">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="88pt"
+            android:layout_height="88pt"
+            android:padding="24pt"
+            android:src="@mipmap/back_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:includeFontPadding="false"
+            android:text="历史记录"
+            android:textColor="@color/black"
+            android:textSize="35pt"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ll_select_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="30pt">
+
+            <TextView
+                android:id="@+id/tv_select_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10pt"
+                android:includeFontPadding="false"
+                android:text="2020-01-20"
+                android:textColor="@color/color_3"
+                android:textSize="23pt" />
+
+            <ImageView
+                android:layout_width="29pt"
+                android:layout_height="29pt"
+                android:src="@mipmap/dianpu_jiage_jiangxu" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1pt"
+        android:background="@color/line" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginVertical="19pt"
+        android:background="@drawable/shengming_lishi_bg_main">
+
+        <TextView
+            android:id="@+id/bt_xinlv"
+            android:layout_width="191pt"
+            android:layout_height="55pt"
+            android:background="@drawable/shengming_lishi_bg_bt"
+            android:gravity="center"
+            android:text="心率"
+            android:textColor="@color/white"
+            android:textSize="23pt" />
+
+        <TextView
+            android:id="@+id/bt_huxi"
+            android:layout_width="191pt"
+            android:layout_height="55pt"
+            android:gravity="center"
+            android:text="呼吸"
+            android:textColor="@color/color_3"
+            android:textSize="23pt" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_xinlv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_huxi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/ll_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="268pt"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="336pt"
+            android:layout_height="202pt"
+            android:layout_marginBottom="74pt"
+           />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂无本日数据"
+            android:textColor="#9A9FB4"
+            android:textSize="27pt" />
+    </LinearLayout>
+</LinearLayout>

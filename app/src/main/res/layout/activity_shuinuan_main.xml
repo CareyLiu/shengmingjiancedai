@@ -107,7 +107,7 @@
                         <TextView
                             android:id="@+id/tv_dingshi"
                             android:layout_width="wrap_content"
-                            android:layout_height="26pt"
+                            android:layout_height="wrap_content"
                             android:gravity="center"
                             android:includeFontPadding="false"
                             android:text="定时"
@@ -135,7 +135,7 @@
                         <TextView
                             android:id="@+id/tv_zaixian"
                             android:layout_width="wrap_content"
-                            android:layout_height="26pt"
+                            android:layout_height="wrap_content"
                             android:gravity="center"
                             android:includeFontPadding="false"
                             android:text="离线"
@@ -160,7 +160,7 @@
                     <TextView
                         android:id="@+id/tv_shebei_youxiaoqi"
                         android:layout_width="wrap_content"
-                        android:layout_height="27pt"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="267pt"
                         android:layout_marginRight="25pt"
@@ -173,7 +173,7 @@
                     <TextView
                         android:id="@+id/tv_shebei_state"
                         android:layout_width="wrap_content"
-                        android:layout_height="27pt"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="325pt"
                         android:layout_marginRight="25pt"
@@ -225,7 +225,7 @@
                             <TextView
                                 android:id="@+id/tv_shuinuan_kaiji"
                                 android:layout_width="wrap_content"
-                                android:layout_height="34pt"
+                                android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
                                 android:gravity="center"
                                 android:includeFontPadding="false"
@@ -258,7 +258,7 @@
                             <TextView
                                 android:id="@+id/tv_shuinuan_guanji"
                                 android:layout_width="wrap_content"
-                                android:layout_height="34pt"
+                                android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
                                 android:includeFontPadding="false"
                                 android:text="关机"

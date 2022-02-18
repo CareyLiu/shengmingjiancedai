@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="29pt"
+        android:layout_marginTop="19pt"
+        android:background="@drawable/bg_white_radius_8"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_set_canshu"
+            android:layout_width="match_parent"
+            android:layout_height="96pt"
+            android:paddingHorizontal="20pt">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="设备预警参数配置"
+                android:textColor="@color/color_2"
+                android:textSize="27pt" />
+
+            <ImageView
+                android:layout_width="12pt"
+                android:layout_height="24pt"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/push_gray_999" />
+        </RelativeLayout>
+
+        <include layout="@layout/view_line" />
+
+        <RelativeLayout
+            android:id="@+id/rl_set_jiekou"
+            android:layout_width="match_parent"
+            android:layout_height="96pt"
+            android:paddingHorizontal="20pt">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="接口调试地址"
+                android:textColor="@color/color_2"
+                android:textSize="27pt" />
+
+            <ImageView
+                android:layout_width="12pt"
+                android:layout_height="24pt"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/push_gray_999" />
+        </RelativeLayout>
+
+        <include layout="@layout/view_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="96pt"
+            android:paddingHorizontal="20pt">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="实时数据推送"
+                android:textColor="@color/color_2"
+                android:textSize="27pt" />
+
+
+            <ImageView
+                android:id="@+id/iv_switch_shishishuju"
+                android:layout_width="102pt"
+                android:layout_height="62pt"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/switch_open" />
+        </RelativeLayout>
+
+        <include layout="@layout/view_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="96pt"
+            android:paddingHorizontal="20pt">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="预警数据推送"
+                android:textColor="@color/color_2"
+                android:textSize="27pt" />
+
+            <ImageView
+                android:id="@+id/iv_switch_yujingshuju"
+                android:layout_width="102pt"
+                android:layout_height="62pt"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/switch_open" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

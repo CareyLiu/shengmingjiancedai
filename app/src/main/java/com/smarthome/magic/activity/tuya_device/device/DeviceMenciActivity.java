@@ -30,6 +30,7 @@ import com.smarthome.magic.activity.tuya_device.utils.manager.TuyaHomeManager;
 import com.smarthome.magic.app.ConstanceValue;
 import com.smarthome.magic.app.Notice;
 import com.smarthome.magic.app.RxBus;
+import com.smarthome.magic.util.SoundPoolUtils;
 import com.tuya.smart.home.sdk.TuyaHomeSdk;
 import com.tuya.smart.sdk.api.IDevListener;
 import com.tuya.smart.sdk.api.ITuyaDataCallback;
@@ -321,7 +322,7 @@ public class DeviceMenciActivity extends TuyaBaseDeviceActivity {
         Y.e("解析出的数据:  " + "key = " + key + "  |  value = " + value);
         if (key.equals(dpsKaiguanId)) {
             DpModel.DpsBean dpsBean = new DpModel.DpsBean();
-            String data = Y.getDataS(new Date());
+            String data = Y.getDateS(new Date());
             dpsBean.setTimeStr(data);
             dpsBean.setValue(value);
             dps.add(0, dpsBean);
@@ -333,10 +334,12 @@ public class DeviceMenciActivity extends TuyaBaseDeviceActivity {
                     view_zhongjian.setVisibility(View.GONE);
                 } else {
                     view_zhongjian.setVisibility(View.VISIBLE);
+                    SoundPoolUtils.soundPool(mContext, R.raw.baojingyin3);
                 }
             } else if (productId.equals(TuyaConfig.PRODUCTID_MENCI)) {
                 if (value.equals("true")) {
                     view_zhongjian.setVisibility(View.VISIBLE);
+                    SoundPoolUtils.soundPool(mContext, R.raw.baojingyin3);
                 } else {
                     view_zhongjian.setVisibility(View.GONE);
                 }

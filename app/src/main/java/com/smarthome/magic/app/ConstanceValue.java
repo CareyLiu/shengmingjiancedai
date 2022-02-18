@@ -193,4 +193,6 @@ public interface ConstanceValue {
 
     int MSG_CHUWUGUI_DIANJIJIFEI = 0x10142;//点击确定跳支付
 
+    int MSG_SHENGMIN_HOME_BACK= 0x10143;//生命体征带返回首页
+
 }

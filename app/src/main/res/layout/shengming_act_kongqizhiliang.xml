@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="365pt"
+                android:background="@mipmap/kongqizhiliang_bg"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="88pt"
+                    android:layout_marginTop="40pt">
+
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="88pt"
+                        android:layout_height="88pt"
+                        android:padding="24pt"
+                        android:src="@mipmap/back_white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:includeFontPadding="false"
+                        android:text="空气质量"
+                        android:textColor="@color/white"
+                        android:textSize="35pt"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="37pt">
+
+                    <ImageView
+                        android:layout_width="38pt"
+                        android:layout_height="29pt"
+                        android:layout_marginRight="15pt"
+                        android:src="@mipmap/yun" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="27℃"
+                        android:textColor="@color/white"
+                        android:textSize="29pt" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15pt"
+                    android:includeFontPadding="false"
+                    android:paddingLeft="37pt"
+                    android:text="早上好"
+                    android:textColor="@color/white"
+                    android:textSize="58pt"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="29pt"
+                android:layout_marginTop="19pt"
+                android:background="@drawable/shengming_wihte_line"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18pt"
+                    android:layout_marginTop="14pt"
+                    android:includeFontPadding="false"
+                    android:text="室内环境"
+                    android:textColor="@color/color_main_yiyang"
+                    android:textSize="27pt"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="336pt"
+                    android:layout_height="336pt"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@mipmap/shineihuanjing_bg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="55pt">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="0"
+                            android:textColor="#A3CDFF"
+                            android:textSize="86pt"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="36"
+                            android:textColor="@color/color_main_yiyang"
+                            android:textSize="86pt"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="77pt"
+                        android:layout_height="29pt"
+                        android:layout_marginBottom="24pt"
+                        android:background="@drawable/bg_blue_radius_4"
+                        android:gravity="center"
+                        android:text="舒适"
+                        android:textColor="@color/white"
+                        android:textSize="19pt" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="室内空气质量优"
+                        android:textColor="@color/color_9"
+                        android:textSize="19pt" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="Indoor air quality"
+                        android:textColor="@color/color_9"
+                        android:textSize="19pt" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20pt">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="二氧化碳"
+                            android:textColor="@color/color_3"
+                            android:textSize="23pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Room CO2（ppm）"
+                            android:textColor="@color/color_9"
+                            android:textSize="13pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="55pt"
+                            android:gravity="center"
+                            android:text="440"
+                            android:textColor="@color/color_main_yiyang"
+                            android:textSize="35pt" />
+
+
+                        <ImageView
+                            android:layout_width="156pt"
+                            android:layout_height="15pt"
+                            android:src="@mipmap/co2" />
+
+
+                        <LinearLayout
+                            android:layout_width="156pt"
+                            android:layout_height="15pt">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:includeFontPadding="false"
+                                android:text="0"
+                                android:textColor="@color/color_9"
+                                android:textSize="10pt" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="2000"
+                                android:textColor="@color/color_9"
+                                android:textSize="10pt" />
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30pt"
+                            android:includeFontPadding="false"
+                            android:text="氨"
+                            android:textColor="@color/color_3"
+                            android:textSize="23pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Room NH3（mg/m³）"
+                            android:textColor="@color/color_9"
+                            android:textSize="13pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="84pt"
+                            android:paddingTop="17pt"
+                            android:text="0.02"
+                            android:textColor="@color/color_main_yiyang"
+                            android:textSize="35pt" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="总挥发性有机物"
+                            android:textColor="@color/color_3"
+                            android:textSize="23pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Room TVOC（mg/m³）"
+                            android:textColor="@color/color_9"
+                            android:textSize="13pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="84pt"
+                            android:paddingTop="17pt"
+                            android:text="0.02"
+                            android:textColor="@color/color_main_yiyang"
+                            android:textSize="35pt" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="甲醛"
+                            android:textColor="@color/color_3"
+                            android:textSize="23pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Room CH₂O（mg/m³）"
+                            android:textColor="@color/color_9"
+                            android:textSize="13pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="55pt"
+                            android:layout_marginTop="4pt"
+                            android:gravity="center"
+                            android:text="优"
+                            android:textColor="@color/color_main_yiyang"
+                            android:textSize="35pt" />
+
+                        <ImageView
+                            android:layout_width="156pt"
+                            android:layout_height="15pt"
+                            android:layout_marginTop="3pt"
+                            android:layout_marginBottom="8pt"
+                            android:src="@mipmap/ch2o" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30pt"
+                            android:includeFontPadding="false"
+                            android:text="臭氧"
+                            android:textColor="@color/color_3"
+                            android:textSize="23pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Room O₃（mg/m³）"
+                            android:textColor="@color/color_9"
+                            android:textSize="13pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="84pt"
+                            android:paddingTop="17pt"
+                            android:text="0.02"
+                            android:textColor="@color/color_main_yiyang"
+                            android:textSize="35pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="可吸入颗粒物"
+                            android:textColor="@color/color_3"
+                            android:textSize="23pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Room PM10（mg/m³）"
+                            android:textColor="@color/color_9"
+                            android:textSize="13pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="84pt"
+                            android:paddingTop="17pt"
+                            android:text="0.02"
+                            android:textColor="@color/color_main_yiyang"
+                            android:textSize="35pt" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="173pt"
+                    android:layout_marginBottom="40pt">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_icon_wendu"
+                            android:layout_width="48pt"
+                            android:layout_height="48pt"
+                            android:layout_marginLeft="57pt"
+                            android:layout_marginTop="19pt"
+                            android:src="@mipmap/shengming_icon_wendu" />
+
+                        <TextView
+                            android:id="@+id/tv_wendu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="23pt"
+                            android:layout_toRightOf="@id/iv_icon_wendu"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:text="温度监测"
+                            android:textColor="@color/color_3"
+                            android:textSize="23pt" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_wendu"
+                            android:layout_toRightOf="@id/iv_icon_wendu"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:text="Temperature monitoring"
+                            android:textColor="@color/color_9"
+                            android:textSize="13pt" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="90pt">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="20"
+                                        android:textColor="@color/color_main_yiyang"
+                                        android:textSize="29pt" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="℃"
+                                        android:textColor="@color/color_9"
+                                        android:textSize="29pt" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:text="室内"
+                                    android:textColor="@color/color_3"
+                                    android:textSize="23pt" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:text="ROOM"
+                                    android:textColor="@color/color_9"
+                                    android:textSize="13pt" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="-12"
+                                        android:textColor="#F76218"
+                                        android:textSize="29pt" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="℃"
+                                        android:textColor="@color/color_9"
+                                        android:textSize="29pt" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:text="室外"
+                                    android:textColor="@color/color_3"
+                                    android:textSize="23pt" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:text="OUTDOOR"
+                                    android:textColor="@color/color_9"
+                                    android:textSize="13pt" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="2pt"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_main_yiyang" />
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_icon_shidu"
+                            android:layout_width="48pt"
+                            android:layout_height="48pt"
+                            android:layout_marginLeft="57pt"
+                            android:layout_marginTop="19pt"
+                            android:src="@mipmap/shengming_icon_shidu" />
+
+                        <TextView
+                            android:id="@+id/tv_shidu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="23pt"
+                            android:layout_toRightOf="@id/iv_icon_shidu"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:text="湿度监测"
+                            android:textColor="@color/color_3"
+                            android:textSize="23pt" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_shidu"
+                            android:layout_toRightOf="@id/iv_icon_shidu"
+                            android:gravity="center_horizontal"
+                            android:includeFontPadding="false"
+                            android:text="Humidity monitoring"
+                            android:textColor="@color/color_9"
+                            android:textSize="13pt" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="90pt">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="45"
+                                        android:textColor="@color/color_main_yiyang"
+                                        android:textSize="29pt" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="%"
+                                        android:textColor="@color/color_9"
+                                        android:textSize="29pt" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:text="室内"
+                                    android:textColor="@color/color_3"
+                                    android:textSize="23pt" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:text="ROOM"
+                                    android:textColor="@color/color_9"
+                                    android:textSize="13pt" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="60"
+                                        android:textColor="#F76218"
+                                        android:textSize="29pt" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="%"
+                                        android:textColor="@color/color_9"
+                                        android:textSize="29pt" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:text="室外"
+                                    android:textColor="@color/color_3"
+                                    android:textSize="23pt" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:text="OUTDOOR"
+                                    android:textColor="@color/color_9"
+                                    android:textSize="13pt" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="29pt"
+                android:layout_marginTop="19pt"
+                android:background="@drawable/shengming_wihte_line"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18pt"
+                    android:layout_marginTop="14pt"
+                    android:includeFontPadding="false"
+                    android:text="室内环境"
+                    android:textColor="@color/color_main_yiyang"
+                    android:textSize="27pt"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="336pt"
+                    android:layout_height="336pt"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@mipmap/shineihuanjing_bg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="55pt">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="0"
+                            android:textColor="#A3CDFF"
+                            android:textSize="86pt"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="32"
+                            android:textColor="@color/color_main_yiyang"
+                            android:textSize="86pt"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="77pt"
+                        android:layout_height="29pt"
+                        android:layout_marginBottom="24pt"
+                        android:background="@drawable/bg_blue_radius_4"
+                        android:gravity="center"
+                        android:text="舒适"
+                        android:textColor="@color/white"
+                        android:textSize="19pt" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="室内暂无噪音污染"
+                        android:textColor="@color/color_9"
+                        android:textSize="19pt" />
+
+                    <TextView
+                        android:layout_width="163pt"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:includeFontPadding="false"
+                        android:text=" No noise pollution at present"
+                        android:textColor="@color/color_9"
+                        android:textSize="19pt" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50pt" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

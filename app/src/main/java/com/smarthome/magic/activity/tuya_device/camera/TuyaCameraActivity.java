@@ -307,7 +307,6 @@ public class TuyaCameraActivity extends TuyaBaseCameraDeviceActivity implements 
     }
 
     private void jieData(String key, String value, JSONObject jsonObject) {
-        Y.e("解析出的数据:  " + "key = " + key + "  |  value = " + value);
         if (key.equals("105")) {
             isYinsi = jsonObject.getBoolean("105");
             if (isYinsi) {
@@ -377,7 +376,7 @@ public class TuyaCameraActivity extends TuyaBaseCameraDeviceActivity implements 
                 } else if (name.equals("报警")) {
                     CameraSetBaojingActivity.actionStart(mContext);
                 } else if (name.equals("相册")) {
-                    CameraXiangceActivity.actionStart(mContext);
+//                    CameraXiangceActivity.actionStart(mContext);
 //                    Bundle bundle = new Bundle();
 //                    bundle.putString("extra_camera_uuid", ty_device_ccid);
 //                    UrlBuilder urlBuilder = new UrlBuilder(mContext, "camera_local_video_photo").putExtras(bundle);
@@ -531,13 +530,11 @@ public class TuyaCameraActivity extends TuyaBaseCameraDeviceActivity implements 
         mCameraP2P.startRecordLocalMp4(picPath, mContext, new OperationDelegateCallBack() {
             @Override
             public void onSuccess(int sessionId, int requestId, String data) {
-                Y.e("录制成功过拉");
                 upData(model);
             }
 
             @Override
             public void onFailure(int sessionId, int requestId, int errCode) {
-                Y.e("录制失败国防军二分法");
                 showFailure();
             }
         });
@@ -548,13 +545,11 @@ public class TuyaCameraActivity extends TuyaBaseCameraDeviceActivity implements 
         mCameraP2P.stopRecordLocalMp4(new OperationDelegateCallBack() {
             @Override
             public void onSuccess(int sessionId, int requestId, String data) {
-                Y.e("我成功了麽啊啊啊啊");
                 upData(model);
             }
 
             @Override
             public void onFailure(int sessionId, int requestId, int errCode) {
-                Y.e("我失敗了麽麽發發  " + errCode);
                 showFailure();
                 upData(model);
             }
@@ -562,10 +557,8 @@ public class TuyaCameraActivity extends TuyaBaseCameraDeviceActivity implements 
     }
 
     private void cameraConnect() {
-        Y.e("P2P是否连接上了  " + mCameraP2P.isConnecting());
         if (!mCameraP2P.isConnecting()) {
             showProgressDialog();
-            Y.e("正在连接P2P");
             mCameraP2P.connect(mDeviceBeen.getDevId(), new OperationDelegateCallBack() {
                 @Override
                 public void onSuccess(int sessionId, int requestId, String data) {
@@ -591,7 +584,6 @@ public class TuyaCameraActivity extends TuyaBaseCameraDeviceActivity implements 
 
             @Override
             public void onSignalValueFind(String signal) {
-                Y.e("我在执行着信号强度么  " + signal);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -602,7 +594,7 @@ public class TuyaCameraActivity extends TuyaBaseCameraDeviceActivity implements 
 
             @Override
             public void onError(String errorCode, String errorMsg) {
-                Y.e("信号强度失败了：  " + errorMsg);
+
             }
         });
     }
@@ -912,7 +904,6 @@ public class TuyaCameraActivity extends TuyaBaseCameraDeviceActivity implements 
                 setDp("119", "2");//右
             }
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
-            Y.e("我抬起来了并停止转动");
             if (view.getId() == R.id.bt_up) {
                 setDp("116", false);//停止转动
             } else if (view.getId() == R.id.bt_down) {
@@ -930,7 +921,6 @@ public class TuyaCameraActivity extends TuyaBaseCameraDeviceActivity implements 
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         if (newConfig.orientation == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
-            Y.e("我是竖屏阿飞烦烦烦");
             ll_main.setVisibility(View.VISIBLE);
             rl_quanping.setVisibility(View.GONE);
             fl_quanping.removeAllViews();
@@ -940,7 +930,6 @@ public class TuyaCameraActivity extends TuyaBaseCameraDeviceActivity implements 
         } else {
             mToolbar.setVisibility(View.GONE);
             closeFangxiang();
-            Y.e("我是横屏开飞机的收费电视 ");
             ll_main.setVisibility(View.GONE);
             rl_quanping.setVisibility(View.VISIBLE);
             fl_camera.removeAllViews();

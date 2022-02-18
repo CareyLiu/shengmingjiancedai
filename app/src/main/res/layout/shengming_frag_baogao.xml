@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:srlTextSizeTime="10sp"
+            app:srlTextSizeTitle="12sp" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="576pt"
+                    android:background="@mipmap/shengming_bj"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="88pt"
+                        android:layout_marginTop="40pt">
+
+                        <ImageView
+                            android:id="@+id/iv_back"
+                            android:layout_width="88pt"
+                            android:layout_height="88pt"
+                            android:padding="24pt"
+                            android:src="@mipmap/back_white"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:includeFontPadding="false"
+                            android:text="生命体征监测"
+                            android:textColor="@color/white"
+                            android:textSize="35pt"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/bt_more"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:includeFontPadding="false"
+                            android:paddingHorizontal="29pt"
+                            android:text="更多报告"
+                            android:textColor="@color/white"
+                            android:textSize="30pt"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+
+                    <FrameLayout
+                        android:layout_width="270pt"
+                        android:layout_height="270pt"
+                        android:layout_centerInParent="true">
+
+                        <com.smarthome.magic.activity.shengming.view.CircularProgressView
+                            android:id="@+id/progress_circular"
+                            android:layout_width="270pt"
+                            android:layout_height="270pt"
+                            android:background="@mipmap/shengming_progress_dian"
+                            android:padding="20pt"
+                            app:backColor="#33E5F8FB"
+                            app:backWidth="25pt"
+                            app:circular_progress="80"
+                            app:progColor="@color/white"
+                            app:progWidth="25pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="30pt"
+                            android:includeFontPadding="false"
+                            android:text="当前体征状态"
+                            android:textColor="@color/white"
+                            android:textSize="20pt" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20pt"
+                            android:gravity="bottom">
+
+                            <TextView
+                                android:id="@+id/tv_progress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="85"
+                                android:textColor="@color/white"
+                                android:textSize="58pt" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4pt"
+                                android:includeFontPadding="false"
+                                android:text="分"
+                                android:textColor="@color/white"
+                                android:textSize="23pt" />
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="30pt"
+                        android:includeFontPadding="false"
+                        android:text="当前设备:生命体征带"
+                        android:textColor="@color/color_main_yiyang"
+                        android:textSize="27pt" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56pt"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="29pt">
+
+                    <View
+                        android:layout_width="4pt"
+                        android:layout_height="27pt"
+                        android:layout_marginRight="10pt"
+                        android:background="@drawable/bt_login_denglu" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="体征报告"
+                        android:textColor="@color/color_1"
+                        android:textSize="29pt" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="29pt"
+                    android:layout_marginBottom="10pt">
+
+                    <FrameLayout
+                        android:layout_width="317pt"
+                        android:layout_height="192pt"
+                        android:background="@mipmap/shengming_xinlv_bg"
+                        android:padding="19pt">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="42pt"
+                                android:layout_height="42pt"
+                                android:layout_marginRight="10pt"
+                                android:src="@mipmap/shengming_fei_white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="平均心率"
+                                android:textColor="@color/white"
+                                android:textSize="27pt" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_xinlv_avg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10pt"
+                            android:includeFontPadding="false"
+                            android:text="次/分"
+                            android:textColor="@color/white"
+                            android:textSize="29pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:text="较正常 较昨日"
+                            android:textColor="@color/white"
+                            android:textSize="27pt" />
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <FrameLayout
+                        android:layout_width="317pt"
+                        android:layout_height="192pt"
+                        android:background="@mipmap/shengming_huxi_bg"
+                        android:padding="19pt"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="42pt"
+                                android:layout_height="42pt"
+                                android:layout_marginRight="10pt"
+                                android:src="@mipmap/shengming_fei_white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="平均呼吸"
+                                android:textColor="@color/white"
+                                android:textSize="27pt" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_huxi_avg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10pt"
+                            android:includeFontPadding="false"
+                            android:text="次/分"
+                            android:textColor="@color/white"
+                            android:textSize="29pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:text="较正常 较昨日"
+                            android:textColor="@color/white"
+                            android:textSize="27pt" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="29pt"
+                    android:layout_marginBottom="10pt"
+                    android:visibility="visible">
+
+                    <FrameLayout
+                        android:layout_width="317pt"
+                        android:layout_height="192pt"
+                        android:background="@drawable/shengming_wihte_line"
+                        android:padding="19pt">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="42pt"
+                                android:layout_height="42pt"
+                                android:layout_marginRight="10pt"
+                                android:src="@mipmap/shengming_xinlv_icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="平均心率"
+                                android:textColor="@color/color_3"
+                                android:textSize="27pt" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_xinlv_max"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10pt"
+                            android:includeFontPadding="false"
+                            android:text="次/分"
+                            android:textColor="@color/color_3"
+                            android:textSize="29pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:text="较正常 较昨日"
+                            android:textColor="@color/color_3"
+                            android:textSize="27pt" />
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <FrameLayout
+                        android:layout_width="317pt"
+                        android:layout_height="192pt"
+                        android:background="@drawable/shengming_wihte_line"
+                        android:padding="19pt">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="42pt"
+                                android:layout_height="42pt"
+                                android:layout_marginRight="10pt"
+                                android:src="@mipmap/shengming_fei_icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="最高呼吸"
+                                android:textColor="@color/color_3"
+                                android:textSize="27pt" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_huxi_max"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10pt"
+                            android:includeFontPadding="false"
+                            android:text="次/分"
+                            android:textColor="@color/color_3"
+                            android:textSize="29pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:text="较正常 较昨日"
+                            android:textColor="@color/color_3"
+                            android:textSize="27pt" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="29pt">
+
+                    <FrameLayout
+                        android:layout_width="317pt"
+                        android:layout_height="192pt"
+                        android:background="@drawable/shengming_wihte_line"
+                        android:padding="19pt">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="42pt"
+                                android:layout_height="42pt"
+                                android:layout_marginRight="10pt"
+                                android:src="@mipmap/shengming_xinlv_icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="最低心率"
+                                android:textColor="@color/color_3"
+                                android:textSize="27pt" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_xinlv_min"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10pt"
+                            android:includeFontPadding="false"
+                            android:text="次/分"
+                            android:textColor="@color/color_3"
+                            android:textSize="29pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:text="较正常 较昨日"
+                            android:textColor="@color/color_3"
+                            android:textSize="27pt" />
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <FrameLayout
+                        android:layout_width="317pt"
+                        android:layout_height="192pt"
+                        android:background="@drawable/shengming_wihte_line"
+                        android:padding="19pt">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="42pt"
+                                android:layout_height="42pt"
+                                android:layout_marginRight="10pt"
+                                android:src="@mipmap/shengming_fei_icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="最低呼吸"
+                                android:textColor="@color/color_3"
+                                android:textSize="27pt" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_huxi_min"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10pt"
+                            android:includeFontPadding="false"
+                            android:text="次/分"
+                            android:textColor="@color/color_3"
+                            android:textSize="29pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:text="较正常 较昨日"
+                            android:textColor="@color/color_3"
+                            android:textSize="27pt" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56pt"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="29pt">
+
+                    <View
+                        android:layout_width="4pt"
+                        android:layout_height="27pt"
+                        android:layout_marginRight="10pt"
+                        android:background="@drawable/bt_login_denglu" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="睡眠报告"
+                        android:textColor="@color/color_1"
+                        android:textSize="29pt" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="29pt"
+                    android:background="@drawable/shengming_wihte_line"
+                    android:paddingTop="10pt">
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pie_chat_shuimian"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56pt"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="29pt">
+
+                    <View
+                        android:layout_width="4pt"
+                        android:layout_height="27pt"
+                        android:layout_marginRight="10pt"
+                        android:background="@drawable/bt_login_denglu" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="体动报告"
+                        android:textColor="@color/color_1"
+                        android:textSize="29pt" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="29pt"
+                    android:layout_marginBottom="10pt">
+
+                    <FrameLayout
+                        android:layout_width="317pt"
+                        android:layout_height="192pt"
+                        android:background="@mipmap/shengming_xinlv_bg"
+                        android:padding="19pt">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="42pt"
+                                android:layout_height="42pt"
+                                android:layout_marginRight="10pt"
+                                android:src="@mipmap/tuolijianhu" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="脱离监护"
+                                android:textColor="@color/white"
+                                android:textSize="27pt" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_jianhu_cishu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10pt"
+                            android:includeFontPadding="false"
+                            android:text="次"
+                            android:textColor="@color/white"
+                            android:textSize="29pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:text="较正常 较昨日"
+                            android:textColor="@color/white"
+                            android:textSize="27pt" />
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <FrameLayout
+                        android:layout_width="317pt"
+                        android:layout_height="192pt"
+                        android:background="@mipmap/shengming_huxi_bg"
+                        android:padding="19pt"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="42pt"
+                                android:layout_height="42pt"
+                                android:layout_marginRight="10pt"
+                                android:src="@mipmap/tidong" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="在床体动次数"
+                                android:textColor="@color/white"
+                                android:textSize="27pt" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_tidong_cishu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10pt"
+                            android:includeFontPadding="false"
+                            android:text="次"
+                            android:textColor="@color/white"
+                            android:textSize="29pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:text="较正常 较昨日"
+                            android:textColor="@color/white"
+                            android:textSize="27pt" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="29pt"
+                    android:layout_marginBottom="10pt"
+                    android:visibility="visible">
+
+                    <FrameLayout
+                        android:layout_width="317pt"
+                        android:layout_height="192pt"
+                        android:background="@drawable/shengming_wihte_line"
+                        android:padding="19pt">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="42pt"
+                                android:layout_height="42pt"
+                                android:layout_marginRight="10pt"
+                                android:src="@mipmap/tuolijianhuzuichang" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="单次最长"
+                                android:textColor="@color/color_3"
+                                android:textSize="27pt" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_jianhu_zuichang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10pt"
+                            android:includeFontPadding="false"
+                            android:text="秒"
+                            android:textColor="@color/color_3"
+                            android:textSize="29pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:text="较正常 较昨日"
+                            android:textColor="@color/color_3"
+                            android:textSize="27pt" />
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <FrameLayout
+                        android:layout_width="317pt"
+                        android:layout_height="192pt"
+                        android:background="@drawable/shengming_wihte_line"
+                        android:padding="19pt">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="42pt"
+                                android:layout_height="42pt"
+                                android:layout_marginRight="10pt"
+                                android:src="@mipmap/tidongzuichang" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="单次最长"
+                                android:textColor="@color/color_3"
+                                android:textSize="27pt" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_tidong_zuichang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10pt"
+                            android:includeFontPadding="false"
+                            android:text="秒"
+                            android:textColor="@color/color_3"
+                            android:textSize="29pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:text="较正常 较昨日"
+                            android:textColor="@color/color_3"
+                            android:textSize="27pt" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="29pt">
+
+                    <FrameLayout
+                        android:layout_width="317pt"
+                        android:layout_height="192pt"
+                        android:background="@drawable/shengming_wihte_line"
+                        android:padding="19pt">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="42pt"
+                                android:layout_height="42pt"
+                                android:layout_marginRight="10pt"
+                                android:src="@mipmap/tuolijianhuzuichang" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="单次最短"
+                                android:textColor="@color/color_3"
+                                android:textSize="27pt" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_jianhu_zuiduan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10pt"
+                            android:includeFontPadding="false"
+                            android:text="秒"
+                            android:textColor="@color/color_3"
+                            android:textSize="29pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:text="较正常 较昨日"
+                            android:textColor="@color/color_3"
+                            android:textSize="27pt" />
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <FrameLayout
+                        android:layout_width="317pt"
+                        android:layout_height="192pt"
+                        android:background="@drawable/shengming_wihte_line"
+                        android:padding="19pt">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="42pt"
+                                android:layout_height="42pt"
+                                android:layout_marginRight="10pt"
+                                android:src="@mipmap/tidongzuichang" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="单次最短"
+                                android:textColor="@color/color_3"
+                                android:textSize="27pt" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_tidong_zuiduan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10pt"
+                            android:includeFontPadding="false"
+                            android:text="秒"
+                            android:textColor="@color/color_3"
+                            android:textSize="29pt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:includeFontPadding="false"
+                            android:text="较正常 较昨日"
+                            android:textColor="@color/color_3"
+                            android:textSize="27pt" />
+                    </FrameLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56pt"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="29pt">
+
+                    <View
+                        android:layout_width="4pt"
+                        android:layout_height="27pt"
+                        android:layout_marginRight="10pt"
+                        android:background="@drawable/bt_login_denglu" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="建议"
+                        android:textColor="@color/color_1"
+                        android:textSize="29pt" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="106pt"
+                    android:layout_marginHorizontal="29pt"
+                    android:background="@drawable/shengming_wihte_line"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="19pt">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10pt"
+                        android:includeFontPadding="false"
+                        android:text="健康建议"
+                        android:textColor="#01D3AA"
+                        android:textSize="29pt" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="综合报告："
+                        android:textColor="@color/color_3"
+                        android:textSize="23pt" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="106pt"
+                    android:layout_marginHorizontal="29pt"
+                    android:layout_marginTop="10pt"
+                    android:layout_marginBottom="56pt"
+                    android:background="@drawable/shengming_wihte_line"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="19pt">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10pt"
+                        android:includeFontPadding="false"
+                        android:text="睡眠建议"
+                        android:textColor="#0192FE"
+                        android:textSize="29pt" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="综合报告："
+                        android:textColor="@color/color_3"
+                        android:textSize="23pt" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

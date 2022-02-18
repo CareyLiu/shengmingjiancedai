@@ -285,7 +285,7 @@ public class DeviceLoushuiActivity extends TuyaBaseDeviceActivity {
 
         if (key.equals(dpsKaiguanId)) {
             DpModel.DpsBean dpsBean = new DpModel.DpsBean();
-            String data = Y.getDataS(new Date());
+            String data = Y.getDateS(new Date());
             dpsBean.setTimeStr(data);
             dpsBean.setValue(value.toString());
             dps.add(0, dpsBean);
